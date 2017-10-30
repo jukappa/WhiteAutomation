@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="seleniumPractice" />
+        <module name="WhiteAutomation" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="seleniumPractice" target="1.8" />
+      <module name="WhiteAutomation" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

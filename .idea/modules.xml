@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/seleniumPractice.iml" filepath="$PROJECT_DIR$/seleniumPractice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WhiteAutomation.iml" filepath="$PROJECT_DIR$/WhiteAutomation.iml" />
     </modules>
   </component>
 </project>
