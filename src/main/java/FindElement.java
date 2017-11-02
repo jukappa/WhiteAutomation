@@ -1,11 +1,11 @@
 
-import Utils.Common;
 import com.aventstack.extentreports.Status;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 
 public class FindElement {
@@ -20,7 +20,8 @@ public class FindElement {
             ExtentManager.stepReport(Status.PASS,description+ " successfully located");
             return element;
         }catch(Exception e){
-            ExtentManager.stepReport(Status.FAIL,description+" was not located - Method error on line "+ Common.getMethodRowNumberInTestClass());
+            ExtentManager.stepReport(Status.FAIL,description+" was not located - Stack Trace - "+e);
+            Assert.fail();
         }
         return null;
     }
@@ -33,7 +34,8 @@ public class FindElement {
             ExtentManager.stepReport(Status.PASS,description+ " successfully located");
             return element;
         }catch(Exception e){
-            ExtentManager.stepReport(Status.FAIL,description+" was not located - Method error on line "+ Common.getMethodRowNumberInTestClass());
+            ExtentManager.stepReport(Status.FAIL,description+" was not located - Stack Trace "+e);
+            Assert.fail();
         }
         return null;
     }

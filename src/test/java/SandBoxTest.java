@@ -28,10 +28,10 @@ public class SandBoxTest extends BaseTest{
                 PgLanding.enterPassword(driver, "Testing01");
                 PgLanding.clickSignIn(driver);
             }
-            AcOverview.waitForNoBillLoadingSpinner(driver);
-            AcOverview.ensureWhatsNewPopUpClosed(driver);
-            AcOverview.verifyBillingHeader(driver);
-
+            AcAccountSummary.waitForNoBillLoadingSpinner(driver);
+            AcAccountSummary.ensureWhatsNewPopUpClosed(driver);
+            AcAccountSummary.verifyBillingHeader(driver);
+            driver.quit();
         }
     }
 

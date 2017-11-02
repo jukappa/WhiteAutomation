@@ -9,6 +9,7 @@ import static java.lang.Boolean.TRUE;
 
 public class Common {
 
+    //method to wait for x amount of milliseconds
     public static void sleep(int milliSeconds) {
         try {
             Thread.sleep(milliSeconds);
@@ -17,6 +18,7 @@ public class Common {
         }
     }
 
+    //verify an element is not present, will wait x amount of seconds for element to not be present before failing
     public static void verifyElementNotPresent(WebDriver driver, String xpath, int secondsToVerify) {
 
         int i = 0;
@@ -36,6 +38,9 @@ public class Common {
         }
     }
 
+    //return boolean if element is present, will not fail regardless
+    //boolean = TRUE - Element is present on page
+    //boolean = FALSE - Element is not present on page
     public static boolean ElementPresent(WebDriver driver, String xpath, int secondsToVerify) {
 
         int i = 0;
@@ -53,7 +58,8 @@ public class Common {
         return flag;
     }
 
-    //returns the row number within the test class
+    //returns the row number within the test class where this method is used
+    //(useful for troubleshooting)
     public static int getMethodRowNumberInTestClass() {
         StackTraceElement[] stack = Thread.currentThread().getStackTrace();
         int i = 0;

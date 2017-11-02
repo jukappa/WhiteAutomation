@@ -1,3 +1,4 @@
+import Utils.Common;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -38,6 +39,12 @@ public class ExtentManager {
     }
 
     public static void stepReport(Status status, String description) {
-        test.log(status, description);
+
+        if (status.equals(Status.FAIL)) {
+            int lineFailure = Common.getMethodRowNumberInTestClass();
+            test.log(status, description + " - Failed on Test Line " + lineFailure);
+        } else {
+            test.log(status, description);
+        }
     }
 }
