@@ -59,7 +59,7 @@ public class Common {
     }
 
     //returns the row number within the test class where this method is used
-    //(useful for troubleshooting)
+    //(useful for troubleshooting.)
     public static int getMethodRowNumberInTestClass() {
         StackTraceElement[] stack = Thread.currentThread().getStackTrace();
         int i = 0;
