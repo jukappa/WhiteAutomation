@@ -2,6 +2,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -20,8 +21,17 @@ public class PreTest {
                 name = "webdriver.chrome.driver";
                 //Gets value in environment variables(uses directory path to specific driver)
                 path = System.getenv("CHROME_DRIVER");
+                System.setProperty("webdriver.chrome.driver","./src//lib//chromedriver");
+                DesiredCapabilities capabilities = DesiredCapabilities.chrome();
                 System.setProperty(name, path);
-                return new ChromeDriver();
+                ChromeOptions options = new ChromeOptions();
+                options.addArguments("test-type");
+                //options.addArguments("--start-maximized");
+                options.addArguments("--disable-web-security");
+                options.addArguments("--allow-running-insecure-content");
+                capabilities.setCapability("chrome.binary",path);
+                capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+                return new ChromeDriver(capabilities);
             case "FIREFOX":
             case "FIRE FOX":
                 name = "webdriver.gecko.driver";
@@ -34,7 +44,15 @@ public class PreTest {
                 path = System.getenv("IE_DRIVER");
                 DesiredCapabilities caps = DesiredCapabilities.internetExplorer();
                 caps.setCapability("ignoreZoomSetting", true);
+                /*caps.setCapability(CapabilityType.ACCEPT_SSL_CERTS,true);
+                caps.acceptInsecureCerts();
+                caps.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,true);*/
+                //caps.setCapability(InternetExplorerDriver.FORCE_CREATE_PROCESS, true);
+                //caps.setCapability(InternetExplorerDriver.IE_SWITCHES, "-private");
+
                 System.setProperty(name, path);
+                //InternetExplorerOptions ieOptions = new InternetExplorerOptions();
+                //ieOptions.introduceFlakinessByIgnoringSecurityDomains();
                 return new InternetExplorerDriver(caps);
 
             case "EDGE":

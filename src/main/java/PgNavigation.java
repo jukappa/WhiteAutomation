@@ -44,4 +44,29 @@ public class PgNavigation {
         FindElement.waitForElementXpath(driver,linkXpath,"Top Settings navigation link").click();
         ExtentManager.stepReport(Status.PASS, "Top Settings navigation link clicked successfully");
     }
+    //Clicks the mail icon button
+    public static void clickmailLink(WebDriver driver) {
+        String linkXpath = "//span[@class = 'mat-button-wrapper']//md-icon[contains(@class ,'email-icon')]";
+        FindElement.waitForElementXpath(driver,linkXpath,"mail icon link").click();
+        ExtentManager.stepReport(Status.PASS, "mail icon link clicked successfully");
+    }
+    //Clicks the phone icon button
+    public static void clickVoiceOnlineManagerLink(WebDriver driver) {
+        String linkXpath = "//div[@class = 'app-header-utility']//md-icon[contains(@class, 'phone-icon')]";
+        FindElement.waitForElementXpath(driver,linkXpath,"phone icon link").click();
+        ExtentManager.stepReport(Status.PASS, "phone icon link clicked successfully");
+    }
+    //Clicks Support link
+    public static void clickSupportLink(WebDriver driver) {
+        String linkXpath = "//span[@class = 'mat-button-wrapper']//span[text() = 'Support']";
+        FindElement.waitForElementXpath(driver,linkXpath,"Support link").click();
+        ExtentManager.stepReport(Status.PASS, "Support link clicked successfully");
+    }
+
+    //Clicks Support link
+    public static void clickUserNameLink(WebDriver driver, String userName) {
+        String linkXpath = "//span[@class = 'mat-button-wrapper']//span[text() = '"+userName+"']";
+        FindElement.waitForElementXpath(driver,linkXpath,"Support link").click();
+        ExtentManager.stepReport(Status.PASS, "username link clicked successfully");
+    }
 }

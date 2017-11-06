@@ -9,17 +9,17 @@ public class SmokeTest extends BaseTest {
     @Test
     public void smokeTest() throws AWTException {
 
-        String[] browsers = {"Chrome","IE"};
+        String[] browsers = {"ie"};
         String userName = "sstest02";
         String passWord = "Testing01";
         String last4Mac = "b52a";
         for (String browser : browsers) {
-            ExtentManager.createTest(browser + " login", "Verify Billing");
+            ExtentManager.createTest(browser + " login", "Smoke Test");
             WebDriver driver = PreTest.getBrowserDrivers(browser);
             //driver.get("HTTPS://pc.engnew-spectrum.net/");
             driver.manage().window().maximize();
-            driver.get("HTTPS://charternet:Chart3rn3t@engprod-spectrum.net/");
-            driver.get("HTTPS://engprod-spectrum.net/");
+            driver.get("HTTPS://charternet:Chart3rn3t@www.engnew-spectrum.net");
+            driver.get("www.engnew-spectrum.net");
             QuickActions.login(driver, userName, passWord, browser);
             AcAccountSummary.waitForNoBillLoadingSpinner(driver);
 
@@ -76,6 +76,55 @@ public class SmokeTest extends BaseTest {
                 //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
             }
 
+            //Ask Spectrum
+            //currently not working with selenium IE
+            try {
+                PgAskSpectrum.clickAskSpectrumChatButton(driver);
+                AcAskSpectrum.verifyAskSpectrumWelcomeMessage(driver);
+                PgAskSpectrum.clickSpectrumXButton(driver);
+                PgAskSpectrum.clickSpectrumCloseButton(driver);
+            } catch (AssertionError a){
+                //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
+            }
+
+            //mail
+            try {
+                PgNavigation.clickmailLink(driver);
+                String mailURL = driver.getCurrentUrl();
+                Comparison.verifyStringMatch("https://mail2.(engprod|engnew)-spectrum.net.*",mailURL);
+                driver.navigate().back();
+            }catch (AssertionError a){
+                //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
+            }
+            //Voice online manager
+            try {
+                PgNavigation.clickVoiceOnlineManagerLink(driver);
+                String voiceURL = driver.getCurrentUrl();
+                Comparison.verifyStringMatch("https://(engprod|www.engnew)-spectrum.net/voice/",voiceURL);
+                driver.navigate().back();
+            }catch (AssertionError a){
+                //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
+            }
+
+            //Support
+            try {
+                PgNavigation.clickSupportLink(driver);
+                String supportURL = driver.getCurrentUrl();
+                Comparison.verifyStringMatch("http://(www.engnew|engprod)-spectrum.net/support/",supportURL);
+                driver.navigate().back();
+            }catch (AssertionError a){
+                //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
+            }
+
+            //Username
+            try {
+                PgNavigation.clickUserNameLink(driver,userName);
+                AcSettings.verifySettingsHeader(driver);
+                AcSettings.verifyContactInfoHeader(driver);
+                driver.navigate().back();
+            }catch (AssertionError a){
+                //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
+            }
         }
     }
 }
