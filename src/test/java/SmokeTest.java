@@ -19,7 +19,7 @@ public class SmokeTest extends BaseTest {
             //driver.get("HTTPS://pc.engnew-spectrum.net/");
             driver.manage().window().maximize();
             driver.get("HTTPS://charternet:Chart3rn3t@www.engnew-spectrum.net");
-            driver.get("www.engnew-spectrum.net");
+            driver.get("https://www.engnew-spectrum.net");
             QuickActions.login(driver, userName, passWord, browser);
             AcAccountSummary.waitForNoBillLoadingSpinner(driver);
 

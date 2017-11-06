@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a30afc4-8ddc-460b-bd66-98198f0cb521" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/AcAskSpectrum.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Comparison.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/PgAskSpectrum.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/AcAccountSummary.class" afterPath="$PROJECT_DIR$/target/classes/AcAccountSummary.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/AcBilling.class" afterPath="$PROJECT_DIR$/target/classes/AcBilling.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/AcInternet.class" afterPath="$PROJECT_DIR$/target/classes/AcInternet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/AcSettings.class" afterPath="$PROJECT_DIR$/target/classes/AcSettings.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/AcTV.class" afterPath="$PROJECT_DIR$/target/classes/AcTV.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/AcVoice.class" afterPath="$PROJECT_DIR$/target/classes/AcVoice.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/PreTest.class" afterPath="$PROJECT_DIR$/target/classes/PreTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/QuickActions.class" afterPath="$PROJECT_DIR$/target/classes/QuickActions.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Utils/Common.class" afterPath="$PROJECT_DIR$/target/classes/Utils/Common.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/SmokeTest.class" afterPath="$PROJECT_DIR$/target/test-classes/SmokeTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extentreport.html" afterPath="$PROJECT_DIR$/extentreport.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/PgNavigation.java" afterPath="$PROJECT_DIR$/src/main/java/PgNavigation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/PreTest.java" afterPath="$PROJECT_DIR$/src/main/java/PreTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/QuickActions.java" afterPath="$PROJECT_DIR$/src/main/java/QuickActions.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/SmokeTest.java" afterPath="$PROJECT_DIR$/src/test/java/SmokeTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -39,8 +22,8 @@
       <file leaf-file-name="SmokeTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/SmokeTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+            <state relative-caret-position="483">
+              <caret line="23" column="65" lean-forward="true" selection-start-line="23" selection-start-column="65" selection-end-line="23" selection-end-column="65" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -61,8 +44,8 @@
       <file leaf-file-name="PgNavigation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/PgNavigation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="577">
-              <caret line="68" column="81" lean-forward="true" selection-start-line="68" selection-start-column="81" selection-end-line="68" selection-end-column="81" />
+            <state relative-caret-position="241">
+              <caret line="48" column="28" lean-forward="true" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="106" />
               <folding />
             </state>
           </provider>
@@ -186,11 +169,11 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="y" value="-1208" />
     <option name="width" value="1936" />
-    <option name="height" value="1166" />
+    <option name="height" value="1176" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -550,34 +533,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SmokeTest_smokeTest - 2017.11.03 at 15h 00m 00s.xml">
-      <configuration name="SmokeTest.smokeTest" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SmokeTest_smokeTest - 2017.11.03 at 15h 01m 38s.xml">
-      <configuration name="SmokeTest.smokeTest" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SmokeTest_smokeTest - 2017.11.03 at 15h 03m 42s.xml">
-      <configuration name="SmokeTest.smokeTest" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SmokeTest_smokeTest - 2017.11.03 at 15h 05m 56s.xml">
-      <configuration name="SmokeTest.smokeTest" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SmokeTest_smokeTest - 2017.11.03 at 15h 07m 12s.xml">
-      <configuration name="SmokeTest.smokeTest" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SmokeTest_smokeTest - 2017.11.03 at 15h 09m 38s.xml">
-      <configuration name="SmokeTest.smokeTest" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SmokeTest_smokeTest - 2017.11.03 at 15h 14m 56s.xml">
-      <configuration name="SmokeTest.smokeTest" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SmokeTest_smokeTest - 2017.11.03 at 15h 22m 04s.xml">
-      <configuration name="SmokeTest.smokeTest" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="SmokeTest_smokeTest - 2017.11.03 at 15h 39m 54s.xml">
       <configuration name="SmokeTest.smokeTest" configurationId="TestNG" />
     </history-entry>
     <history-entry file="SmokeTest_smokeTest - 2017.11.03 at 15h 43m 14s.xml">
+      <configuration name="SmokeTest.smokeTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SmokeTest_smokeTest - 2017.11.06 at 08h 44m 12s.xml">
+      <configuration name="SmokeTest.smokeTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SmokeTest_smokeTest - 2017.11.06 at 08h 45m 47s.xml">
+      <configuration name="SmokeTest.smokeTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SmokeTest_smokeTest - 2017.11.06 at 08h 46m 07s.xml">
+      <configuration name="SmokeTest.smokeTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SmokeTest_smokeTest - 2017.11.06 at 08h 46m 28s.xml">
+      <configuration name="SmokeTest.smokeTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SmokeTest_smokeTest - 2017.11.06 at 08h 47m 03s.xml">
+      <configuration name="SmokeTest.smokeTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SmokeTest_smokeTest - 2017.11.06 at 08h 49m 07s.xml">
+      <configuration name="SmokeTest.smokeTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SmokeTest_smokeTest - 2017.11.06 at 08h 52m 28s.xml">
+      <configuration name="SmokeTest.smokeTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SmokeTest_smokeTest - 2017.11.06 at 08h 55m 46s.xml">
       <configuration name="SmokeTest.smokeTest" configurationId="TestNG" />
     </history-entry>
   </component>
@@ -591,7 +574,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
+    <frame x="-8" y="-1208" width="1936" height="1176" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -602,7 +585,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33599088" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29092702" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938856" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2118451" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -992,14 +975,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/PgNavigation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="577">
-          <caret line="68" column="81" lean-forward="true" selection-start-line="68" selection-start-column="81" selection-end-line="68" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/SandBoxTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -1008,10 +983,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/PgNavigation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="48" column="28" lean-forward="true" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/SmokeTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        <state relative-caret-position="483">
+          <caret line="23" column="65" lean-forward="true" selection-start-line="23" selection-start-column="65" selection-end-line="23" selection-end-column="65" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
