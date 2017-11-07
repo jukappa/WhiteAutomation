@@ -1,4 +1,3 @@
-package Utils;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -27,6 +26,28 @@ public class Common {
             int element = driver.findElements(By.xpath(xpath)).size();
             if (element > 0) {
                 Common.sleep(250);
+                i++;
+            } else {
+                i = secondsToVerify * 4;
+                flag = TRUE;
+            }
+
+        }
+        if (!flag) {
+            Assert.fail("Element xpath " + xpath + " was still present after " + secondsToVerify + " seconds");
+        }
+    }
+
+    //verify an element is not visible, will wait x amount of seconds for element to not be present before failing
+    public static void verifyElementNotVisible(WebDriver driver, String xpath, int secondsToVerify) {
+
+        int i = 0;
+        boolean flag = FALSE;
+        while (i < secondsToVerify * 4) {
+            boolean element = driver.findElement(By.xpath(xpath)).isDisplayed();
+            if (element) {
+                Common.sleep(250);
+                i++;
             } else {
                 i = secondsToVerify * 4;
                 flag = TRUE;

@@ -1,4 +1,3 @@
-import Utils.Common;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
@@ -56,6 +55,19 @@ public class SandBoxTest extends BaseTest{
 
     }*/
 
+    @Test
+    public void test2() throws AWTException {
+
+        String[] browsers = {"firefox"};
+        for (String browser : browsers) {
+            ExtentManager.createTest(browser +" login", "Verify Billing");
+            WebDriver driver = PreTest.getBrowserDrivers(browser);
+            //driver.get("HTTPS://pc.engnew-spectrum.net/");
+            driver.manage().window().maximize();
+            driver.get("http://www.gmail.com");
+            //driver.quit();
+        }
+    }
 }
 
 

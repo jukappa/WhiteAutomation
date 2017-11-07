@@ -13,4 +13,13 @@ public class AcAskSpectrum {
             ExtentManager.stepReport(Status.FAIL,"Expected message '"+expectedMessage+"' did not match actual message of '"+message+"'.");
         }
     }
+
+    //get ask Spectrum x/y coordinates
+    public static int getAskSpectrumCoordinate(WebDriver driver, String desiredCoordinate) {
+        if (desiredCoordinate.toUpperCase().matches("X")) {
+            return FindElement.waitForElementID(driver, "alme-container-label", "Ask Spectrum chat box").getLocation().getX();
+        }else{
+            return FindElement.waitForElementID(driver, "alme-container-label", "Ask Spectrum chat box").getLocation().getY();
+        }
+    }
 }

@@ -12,7 +12,7 @@ public class SmokeTest extends BaseTest {
         String[] browsers = {"ie"};
         String userName = "sstest02";
         String passWord = "Testing01";
-        String last4Mac = "b52a";
+        String last4Mac = "B52A";
         for (String browser : browsers) {
             ExtentManager.createTest(browser + " login", "Smoke Test");
             WebDriver driver = PreTest.getBrowserDrivers(browser);
@@ -34,6 +34,7 @@ public class SmokeTest extends BaseTest {
             //Billing
             try {
                 PgNavigation.clickBillingLink(driver);
+                AcAccountSummary.ensureWhatsNewPopUpClosed(driver);
                 AcBilling.verifyBillingHeader(driver);
                 AcBilling.verifyStatementsHeader(driver);
             } catch (AssertionError|Exception e){

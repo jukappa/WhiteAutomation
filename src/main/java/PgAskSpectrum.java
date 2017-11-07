@@ -20,5 +20,15 @@ public class PgAskSpectrum {
         FindElement.waitForElementXpath(driver,"//button[@id= 'submit-button']","Ask Spectrum close button").click();
         ExtentManager.stepReport(Status.PASS,"Ask Spectrum close button successfully clicked");
     }
+    //click ask Spectrum contract button
+    public static void clickSpectrumContractButton(WebDriver driver) {
+        FindElement.waitForElementXpath(driver,"//button[@id= 'alme-contract-button']","Ask Spectrum contract button").click();
+        ExtentManager.stepReport(Status.PASS,"Ask Spectrum contract successfully clicked");
+    }
 
+    //click ask Spectrum minimize button
+    public static void clickSpectrumMinimizeButton(WebDriver driver) {
+        FindElement.waitForElementXpath(driver,"//button[@id= 'alme-minimize-button']","Ask Spectrum minimize button").click();
+        ExtentManager.stepReport(Status.PASS,"Ask Spectrum minimize successfully clicked");
+    }
 }
