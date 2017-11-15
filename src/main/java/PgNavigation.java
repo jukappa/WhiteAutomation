@@ -3,11 +3,20 @@ import org.openqa.selenium.WebDriver;
 
 public class PgNavigation {
 
+
+
     //Clicks the top account summary navigation link
     public static void clickAccountSummaryLink(WebDriver driver) {
         String linkXpath = "//div[@class = 'app-header-local']//span[text() = 'Account Summary']";
         FindElement.waitForElementXpath(driver,linkXpath,"Top Account Summary navigation link").click();
         ExtentManager.stepReport(Status.PASS, "Top Account Summary navigation link clicked successfully");
+    }
+
+    //Clicks the top account summary navigation link
+    public static void clickSpectrumHeader(WebDriver driver) {
+        String linkXpath = "//span//img[@alt = 'Spectrum logo']";
+        FindElement.waitForElementXpath(driver,linkXpath,"Top Spectrum header").click();
+        ExtentManager.stepReport(Status.PASS, "Top Spectrum header link clicked successfully");
     }
 
     //Clicks the top Billing navigation link

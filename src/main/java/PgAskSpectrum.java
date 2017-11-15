@@ -31,4 +31,9 @@ public class PgAskSpectrum {
         FindElement.waitForElementXpath(driver,"//button[@id= 'alme-minimize-button']","Ask Spectrum minimize button").click();
         ExtentManager.stepReport(Status.PASS,"Ask Spectrum minimize successfully clicked");
     }
+
+/*    //ensures ask spectrum chat window is maximized
+    public static void EnsureAskSpectrumMaximized(WebDriver driver) {
+        Common.verifyElementNotVisible();
+    }*/
 }

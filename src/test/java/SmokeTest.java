@@ -5,6 +5,40 @@ import java.awt.*;
 
 public class SmokeTest extends BaseTest {
 
+    //Scenarios
+    /*-Ask spectrum should be available for both un/authenticated users
+    * -Verify Ask Spectrum can be minimized, reduced, and maximized
+    * -Verify create user name link on main page and left nav menu both go to create username page
+    * -Verify clicking forgot username/pass navigates to forgot page.
+    * Verify clicking "get Password radio button" goes to get password page
+    * -Verify clicking "get username radio button" goes to get username page
+    * Verify clicking "get username and password radio button" goes to get username and password page
+    * -Verify Billing page loads as expected
+    * -Verify Internet page loads as expected
+    * -Verify Account Summary page loads as expected
+    * -Verify Settings page loads as expected
+    * -Verify TV page loads as expected
+    * -Verify Billing page loads as expected
+    * -Verify Voice page loads as expected
+    * -Verify mail icon directs to correct page
+    * -Verify phone icon directs to correct page
+    * -Verify support link directs to correct page
+    * -Verify username link directs to support page
+    * -Verify User can sign in
+    * -Verify Username link directs to correct page
+    * Verify Your services and Equipment section includes icons for TV, Internet and Voice
+    * Verify TV,Internet, and voice options all go to corresponding page
+    * Verify if TV, Internet or Voice service is not included, upgrade link is present and directs to upgrade flow
+    * Verify clicking device on Internet page will display device info with image,specs,and support.
+    * Verify Internet page will contain status, message(based on connection), and troubleshoot button
+    * Verify Internet page has right section with Check Email, Go to Security Suite, with optionals of Access Cloud Drive and Manage Web Space
+    * Verify Main page create username button directs user to create flow
+    * Verify top left menu > sign in page, create username button directs to create flow
+    * Verify when creating a new username email comes from a "spectrum.net" account
+    * Verify Search works as expected
+    * Verify Internet > Trouble shoot > click reset, displays loading modal and once completed shows Continue and Issue Resolved button
+    * Verify when clicking "Issue Resolved" button user is navigated to Internet page
+    * */
 
     @Test
     public void smokeTest() throws AWTException {
@@ -20,10 +54,56 @@ public class SmokeTest extends BaseTest {
             driver.manage().window().maximize();
             driver.get("HTTPS://charternet:Chart3rn3t@www.engnew-spectrum.net");
             driver.get("https://www.engnew-spectrum.net");
+
+            //Ask Spectrum unauthenticated user
+            ExtentManager.createTest("Ask spectrum should be available for unauthenticated users", "Smoke Test");
+            try {
+                PgAskSpectrum.clickAskSpectrumChatButton(driver);
+                AcAskSpectrum.verifyAskSpectrumWelcomeMessage(driver);
+                PgAskSpectrum.clickSpectrumXButton(driver);
+                PgAskSpectrum.clickSpectrumCloseButton(driver);
+            } catch (AssertionError a){
+                //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
+            }
+
+            //create user name links
+            ExtentManager.createTest("Verify create user name link on main page and left nav menu both go to create username page", "Smoke Test");
+            try {
+                PgMenu.clickTopMenuButton(driver);
+                PgMenu.clickCreateAUserNameButton(driver);
+                AcCreateUserName.verifyCreateUsernameTitle(driver);
+                driver.navigate().back();
+                PgLanding.clickCreateAUsernameButton(driver);
+                AcCreateUserName.verifyCreateUsernameTitle(driver);
+                driver.navigate().back();
+            }catch(AssertionError|Exception e){
+                PgNavigation.clickSpectrumHeader(driver);
+            }
+
+            //Forgot username/password link
+            try {
+
+                ExtentManager.createTest("Verify clicking forgot username/pass navigates to forgot page", "Smoke Test");
+                PgLanding.clickForgotUserNameOrPassword(driver);
+                AcForgotUsernamePassword.verifyGetUsernameOrPassword(driver);
+
+                ExtentManager.createTest("Verify clicking 'get username radio button' goes to get username page", "Smoke Test");
+                PgForgotUsernamePassword.selectRadioButton(driver, "get username");
+                PgForgotUsernamePassword.clickContinueButton(driver);
+                AcGetUsername.verifyUsernameTitle(driver);
+                PgNavigation.clickSpectrumHeader(driver);
+
+            }catch(AssertionError|Exception e){
+                PgNavigation.clickSpectrumHeader(driver);
+            }
+
+            ExtentManager.createTest("Verify User can sign in", "Smoke Test");
             QuickActions.login(driver, userName, passWord, browser);
             AcAccountSummary.waitForNoBillLoadingSpinner(driver);
+            AcAccountSummary.ensureWhatsNewPopUpClosed(driver);
 
             //Account Summary
+            ExtentManager.createTest("Verify Account Summary page loads as expected", "Smoke Test");
             try {
                 AcAccountSummary.verifyBillingHeader(driver);
                 AcAccountSummary.ensureWhatsNewPopUpClosed(driver);
@@ -32,6 +112,7 @@ public class SmokeTest extends BaseTest {
             }
 
             //Billing
+            ExtentManager.createTest("Verify Billing page loads as expected", "Smoke Test");
             try {
                 PgNavigation.clickBillingLink(driver);
                 AcAccountSummary.ensureWhatsNewPopUpClosed(driver);
@@ -42,6 +123,7 @@ public class SmokeTest extends BaseTest {
             }
 
             //TV
+            ExtentManager.createTest("Verify TV page loads as expected", "Smoke Test");
             try {
                 PgNavigation.clickTVLink(driver);
                 AcTV.verifyTVServicesAndEquipmentHeader(driver);
@@ -51,6 +133,7 @@ public class SmokeTest extends BaseTest {
             }
 
             //Internet
+            ExtentManager.createTest("Verify Internet page loads as expected", "Smoke Test");
             try {
                 PgNavigation.clickInternetLink(driver);
                 AcInternet.verifyInternetServicesAndEquipmentHeader(driver);
@@ -59,6 +142,7 @@ public class SmokeTest extends BaseTest {
                 //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
             }
             //Voice
+            ExtentManager.createTest("Verify Voice page loads as expected", "Smoke Test");
             try {
                 PgNavigation.clickVoiceLink(driver);
                 QuickActions.ensureVerifyAccountPopUpClosed(driver,last4Mac);
@@ -69,6 +153,7 @@ public class SmokeTest extends BaseTest {
             }
 
             //Settings
+            ExtentManager.createTest("Verify Settings page loads as expected", "Smoke Test");
             try {
                 PgNavigation.clickSettingsLink(driver);
                 AcSettings.verifySettingsHeader(driver);
@@ -78,17 +163,38 @@ public class SmokeTest extends BaseTest {
             }
 
             //Ask Spectrum
-            //currently not working with selenium IE
+            ExtentManager.createTest("Verify Ask Spectrum can be minimized, reduced, and maximized</br>"+"Ask spectrum should be available for both authenticated users", "Smoke Test");
             try {
                 PgAskSpectrum.clickAskSpectrumChatButton(driver);
                 AcAskSpectrum.verifyAskSpectrumWelcomeMessage(driver);
-                PgAskSpectrum.clickSpectrumXButton(driver);
-                PgAskSpectrum.clickSpectrumCloseButton(driver);
+
+                //get ask spectrum Y coordinate while maximized
+                int maximizedY = AcAskSpectrum.getAskSpectrumCoordinate(driver, "y");
+                PgAskSpectrum.clickSpectrumContractButton(driver);
+
+                //ensures maximized chat is not still present before getting new coordinate
+                Common.verifyElementNotVisible(driver,"//button[@id= 'alme-contract-button']",5);
+                //get ask spectrum Y coordinate while reduced for comparison
+                int contractedY = AcAskSpectrum.getAskSpectrumCoordinate(driver, "y");
+
+                //verify maximized Y value to reduced Y value, if reduced value is higher, then ask spectrum successfully went to contracted version and was originally at max version
+                Comparison.verifyHigherIntValue(contractedY,maximizedY);
+                PgAskSpectrum.clickSpectrumMinimizeButton(driver);
+
+                //ensures reduced chat is not still present before getting new coordinate
+                Common.verifyElementNotVisible(driver,"//button[@id= 'alme-expand-button']",5);
+                //get ask spectrum Y coordinate while minimized for comparison
+                int minimizedY = AcAskSpectrum.getAskSpectrumCoordinate(driver,"y");
+                //verify contracted Y value to minimized Y value, if minimized value is higher, then ask spectrum successfully minimized
+                Comparison.verifyHigherIntValue(minimizedY,contractedY);
+
+
             } catch (AssertionError a){
                 //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
             }
 
             //mail
+            ExtentManager.createTest("Verify mail icon directs to correct page", "Smoke Test");
             try {
                 PgNavigation.clickmailLink(driver);
                 String mailURL = driver.getCurrentUrl();
@@ -97,7 +203,9 @@ public class SmokeTest extends BaseTest {
             }catch (AssertionError a){
                 //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
             }
+
             //Voice online manager
+            ExtentManager.createTest("Verify phone icon directs to correct page", "Smoke Test");
             try {
                 PgNavigation.clickVoiceOnlineManagerLink(driver);
                 String voiceURL = driver.getCurrentUrl();
@@ -108,6 +216,7 @@ public class SmokeTest extends BaseTest {
             }
 
             //Support
+            ExtentManager.createTest("Verify support link directs to correct page", "Smoke Test");
             try {
                 PgNavigation.clickSupportLink(driver);
                 String supportURL = driver.getCurrentUrl();
@@ -118,6 +227,7 @@ public class SmokeTest extends BaseTest {
             }
 
             //Username
+            ExtentManager.createTest("Verify Username link directs to correct page", "Smoke Test");
             try {
                 PgNavigation.clickUserNameLink(driver,userName);
                 AcSettings.verifySettingsHeader(driver);

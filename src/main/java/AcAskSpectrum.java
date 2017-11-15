@@ -22,4 +22,13 @@ public class AcAskSpectrum {
             return FindElement.waitForElementID(driver, "alme-container-label", "Ask Spectrum chat box").getLocation().getY();
         }
     }
+
+    //get magnifying glass x/y coordinates
+    public static int getMagnifyingGlassCoordinate(WebDriver driver, String desiredCoordinate) {
+        if (desiredCoordinate.toUpperCase().matches("X")) {
+            return FindElement.waitForElementXpath(driver, "//button[@class = 'search icon-button large']//md-icon[contains(@class, 'search-icon')]", "Search magnifying glass icon").getLocation().getX();
+        }else{
+            return FindElement.waitForElementID(driver, "//button[@class = 'search icon-button large']//md-icon[contains(@class, 'search-icon')]", "Search magnifying glass icon").getLocation().getY();
+        }
+    }
 }

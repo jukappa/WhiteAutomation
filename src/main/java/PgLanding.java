@@ -25,4 +25,15 @@ public class PgLanding{
         element.click();
         ExtentManager.stepReport(Status.INFO,"login sign in was clicked");
     }
+    public static void clickCreateAUsernameButton(WebDriver driver) {
+        WebElement element = FindElement.waitForElementXpath(driver,"//h2[text() = 'Sign In to Get Started']//following-sibling::a[text()='Create a Username']","Create a username button");
+        element.click();
+        ExtentManager.stepReport(Status.INFO,"create a username button");
+    }
+
+    public static void clickForgotUserNameOrPassword(WebDriver driver) {
+        WebElement element = FindElement.waitForElementXpath(driver,"//a[text() = 'Forgot Username or Password?']","forgot username or password button");
+        element.click();
+        ExtentManager.stepReport(Status.INFO,"forgot username or password button");
+    }
 }

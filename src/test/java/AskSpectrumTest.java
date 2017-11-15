@@ -7,7 +7,7 @@ public class AskSpectrumTest extends BaseTest {
 
     //-----------------Scenarios-------------------------\\
     /* -Verify live chat window opens when clicked--(availability and functionality of Live chat_IVA interface)
-    *  Verify live chat window can be minimized--(availability and functionality of Live chat_IVA interface)
+    *  -Verify live chat window can be minimized--(availability and functionality of Live chat_IVA interface)
     *  Verify when live chat is maximized content is shifted to the left to be visible--(availability and functionality of resize CTA_IVA interface_Overlay window)
     *  Verify when live chat is size reduced page content is normal--(availability and functionality of resize CTA_IVA interface_Right tray window)
     *  Verify when in reduced state the following buttons are present- chat icon, header, sound, Maximize, close--(Availabilitytoadjust_preset_settings_IVA interface_minimize button functionalityIVA window and Verification of IVA launch point widget)
@@ -64,6 +64,11 @@ public class AskSpectrumTest extends BaseTest {
             Common.verifyElementNotVisible(driver,"//button[@id= 'alme-expand-button']",5);
             int postY = AcAskSpectrum.getAskSpectrumCoordinate(driver,"y");
             Comparison.verifyHigherIntValue(postY,preY);
+
+            ExtentManager.createTest("Verify when live chat is maximized content is shifted to the left to be visible", "ALM Scenario 'availability and functionality of resize CTA_IVA interface_Overlay window'");
+            int preMagnifyingX = AcAskSpectrum.getMagnifyingGlassCoordinate(driver,"X");
+
+            driver.quit();
         }
     }
 }

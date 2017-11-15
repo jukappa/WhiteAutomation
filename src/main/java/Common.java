@@ -70,9 +70,29 @@ public class Common {
             int element = driver.findElements(By.xpath(xpath)).size();
             if (element > 0) {
                 Common.sleep(250);
+                i++;
             } else {
                 i = secondsToVerify * 4;
                 flag = TRUE;
+            }
+
+        }
+        return flag;
+    }
+
+    public static boolean ElementVisible(WebDriver driver, String xpath, int secondsToVerify) {
+
+        int i = 0;
+        boolean flag = false;
+        while (i < secondsToVerify * 4) {
+            boolean element = driver.findElement(By.xpath(xpath)).isDisplayed();
+            if (element) {
+                Common.sleep(250);
+                flag = TRUE;
+                i++;
+            } else {
+                i = secondsToVerify * 4;
+                flag = FALSE;
             }
 
         }
