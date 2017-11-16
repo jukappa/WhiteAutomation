@@ -12,6 +12,7 @@ public class QuickActions {
         PgLanding.enterUserName(driver, userName);
         PgLanding.enterPassword(driver, passWord);
         PgLanding.clickSignIn(driver);
+        PgLanding.clickSignIn(driver);
         if (browser.toUpperCase().equals("CHROME")) {
             Common.sleep(4000);
             driver.navigate().refresh();
