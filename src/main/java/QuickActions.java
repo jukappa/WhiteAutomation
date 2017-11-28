@@ -8,7 +8,7 @@ import java.awt.event.KeyEvent;
 public class QuickActions {
 
     //Login method, Chrome seems to load slowly, adding a refresh helps load it a bit quicker
-    public static void login(WebDriver driver, String userName, String passWord, String browser) throws AWTException {
+    public static void firstTimeLogin(WebDriver driver, String userName, String passWord, String browser) throws AWTException {
         PgLanding.enterUserName(driver, userName);
         PgLanding.enterPassword(driver, passWord);
         PgLanding.clickSignIn(driver);
@@ -18,11 +18,23 @@ public class QuickActions {
             PgLanding.enterUserName(driver, userName);
             PgLanding.enterPassword(driver, passWord);
             PgLanding.clickSignIn(driver);
+            Common.sleep(1000);
+            Robot rob = new Robot();
+            rob.keyPress((KeyEvent.VK_ESCAPE));
+
+            rob.keyRelease((KeyEvent.VK_ESCAPE));
+            Common.sleep(1000);
+            rob.keyPress((KeyEvent.VK_ESCAPE));
+            rob.keyRelease((KeyEvent.VK_ESCAPE));
+            Common.sleep(1000);
+            rob.keyPress((KeyEvent.VK_ESCAPE));
+            rob.keyRelease((KeyEvent.VK_ESCAPE));
+        } else if (browser.toUpperCase().equals("IE")) {
+            Common.sleep(2000);
+            PgLanding.clickSignIn(driver);
         }
-        Common.sleep(3000);
-        Robot rob = new Robot();
-        rob.keyPress((KeyEvent.VK_ESCAPE));
-        rob.keyRelease((KeyEvent.VK_ESCAPE));
+
+
     }
 
     //This method will ensure the verify account pop up is closed.  if pop up exists, mac is entered and continue clicked.
@@ -31,9 +43,21 @@ public class QuickActions {
 
         String xpath = "//h2[text() = 'Verify Your Account']";
         int popUp = driver.findElements(By.xpath(xpath)).size();
-        if (popUp > 0){
-            FindElement.waitForElementID(driver,"equipmentId","Enter Mac Field").sendKeys(last4MacDigits);;
-            FindElement.waitForElementXpath(driver,"//button[@type = 'submit']","verify Account Continue button").click();
+        if (popUp > 0) {
+            FindElement.waitForElementID(driver, "equipmentId", "Enter Mac Field").sendKeys(last4MacDigits);
+            ;
+            FindElement.waitForElementXpath(driver, "//button[@type = 'submit']", "verify Account Continue button").click();
+        }
+    }
+
+    //Login method, Chrome seems to load slowly, adding a refresh helps load it a bit quicker
+    public static void login(WebDriver driver, String userName, String passWord, String browser) throws AWTException {
+        PgLanding.enterUserName(driver, userName);
+        PgLanding.enterPassword(driver, passWord);
+        PgLanding.clickSignIn(driver);
+        if (browser.toUpperCase().equals("IE")) {
+            Common.sleep(2000);
+            PgLanding.clickSignIn(driver);
         }
     }
 }

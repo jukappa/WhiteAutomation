@@ -44,6 +44,7 @@ public class PreTest {
                 path = System.getenv("IE_DRIVER");
                 DesiredCapabilities caps = DesiredCapabilities.internetExplorer();
                 caps.setCapability("ignoreZoomSetting", true);
+                caps.setCapability(InternetExplorerDriver.NATIVE_EVENTS,false);
                 /*caps.setCapability(CapabilityType.ACCEPT_SSL_CERTS,true);
                 caps.acceptInsecureCerts();
                 caps.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,true);*/

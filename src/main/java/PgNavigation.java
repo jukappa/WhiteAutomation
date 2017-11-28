@@ -14,6 +14,7 @@ public class PgNavigation {
 
     //Clicks the top account summary navigation link
     public static void clickSpectrumHeader(WebDriver driver) {
+        Common.sleep(1000);
         String linkXpath = "//span//img[@alt = 'Spectrum logo']";
         FindElement.waitForElementXpath(driver,linkXpath,"Top Spectrum header").click();
         ExtentManager.stepReport(Status.PASS, "Top Spectrum header link clicked successfully");

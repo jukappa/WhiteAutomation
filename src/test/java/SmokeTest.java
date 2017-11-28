@@ -34,9 +34,14 @@ public class SmokeTest extends BaseTest {
     * -Verify User can sign in
     * -Verify Username link directs to correct page
     * -Verify if TV, Internet or Voice service is not included, upgrade link is present and directs to upgrade flow
-    * Verify when creating a new username email comes from a "spectrum.net" account
     * -Verify Search works as expected
     * */
+
+    //Scenario not automated
+    /*
+    Verify when creating a new username email comes from a "spectrum.net" account
+    */
+
 
     @Test
     public void smokeTest() throws AWTException {
@@ -127,7 +132,7 @@ public class SmokeTest extends BaseTest {
             }
 
             ExtentManager.createTest("Verify User can sign in", "Smoke Test");
-            QuickActions.login(driver, userName, passWord, browser);
+            QuickActions.firstTimeLogin(driver, userName, passWord, browser);
             AcAccountSummary.waitForNoBillLoadingSpinner(driver);
             AcAccountSummary.ensureWhatsNewPopUpClosed(driver);
 
@@ -237,8 +242,7 @@ public class SmokeTest extends BaseTest {
 
             } catch (AssertionError | Exception e) {
                 PgInternet.closeModemResetModalIfPresent(driver);
-                Common.sleep(1000);
-                PgNavigation.clickSpectrumHeader(driver);
+                driver.navigate().to("www.engprod-spectrum.net");
 
             }
             //Voice
@@ -348,7 +352,7 @@ public class SmokeTest extends BaseTest {
             ExtentManager.createTest("Verify if TV, Internet or Voice service is not included, upgrade link is present and directs to upgrade flow", "Smoke Test");
             try{
                 PgNavigation.clickSpectrumHeader(driver);
-                QuickActions.login(driver, accountWithUpgradeLinks, passWord, "NA");
+                QuickActions.login(driver, accountWithUpgradeLinks, passWord, browser);
                 AcAccountSummary.waitForNoBillLoadingSpinner(driver);
                 AcAccountSummary.ensureWhatsNewPopUpClosed(driver);
                 PgAccountSummary.clickFirstAddServiceButton(driver);
