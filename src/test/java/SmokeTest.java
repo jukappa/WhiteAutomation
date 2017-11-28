@@ -348,7 +348,7 @@ public class SmokeTest extends BaseTest {
             ExtentManager.createTest("Verify if TV, Internet or Voice service is not included, upgrade link is present and directs to upgrade flow", "Smoke Test");
             try{
                 PgNavigation.clickSpectrumHeader(driver);
-                QuickActions.login(driver, accountWithUpgradeLinks, passWord, browser);
+                QuickActions.login(driver, accountWithUpgradeLinks, passWord, "NA");
                 AcAccountSummary.waitForNoBillLoadingSpinner(driver);
                 AcAccountSummary.ensureWhatsNewPopUpClosed(driver);
                 PgAccountSummary.clickFirstAddServiceButton(driver);
