@@ -18,4 +18,17 @@ public class PgInternet {
         ExtentManager.stepReport(Status.INFO,"Troubleshoot button clicked successfully");
 
     }
+
+    public static void closeModemResetModalIfPresent(WebDriver driver) {
+        String xpath = "//div[@class = 'modal-content']//button[@cc-track-click = '.closebtn']";
+
+        boolean visible = Common.ElementVisible(driver,xpath,3);
+
+        if (visible) {
+            WebElement element = FindElement.waitForElementXpath(driver,xpath,"Modem reset modal x button");
+            element.click();
+            ExtentManager.stepReport(Status.INFO,"Modem reset modal closed successfully");
+        }
+
+    }
 }

@@ -19,14 +19,14 @@ public class AcInternetTroubleshooting {
     }
 
     //Verify continue button is present
-    public static void verifyContinueButtonPresent(WebDriver driver) {
-        FindElement.waitForElementXpath(driver, "//div[contains(@class, 'visible')]//a[text() = 'Continue ']", "Internet Troubleshooting - Continue button");
+    public static void verifyModalContinueButtonPresent(WebDriver driver) {
+        FindElement.waitForElementXpath(driver, "//a[@class = 'btn secondary-btn btn-lrg'][text() = 'Continue']", "Internet Troubleshooting reset modem - Continue button");
     }
 
     //Verify issue resolved button is present
 
-    public static void verifyIssueResolvedButtonPresent(WebDriver driver) {
-        FindElement.waitForElementXpath(driver, "//div[contains(@class, 'visible')]//a[text() = 'Issue Resolved ']", "Internet Troubleshooting - Continue button");
+    public static void verifyModalIssueResolvedButtonPresent(WebDriver driver) {
+        FindElement.waitForElementXpath(driver, "//a[@class = 'btn primary-btn btn-lrg'][text() = 'Issue Resolved ']", "Internet Troubleshooting reset modem - Issue Resolved button");
     }
 
 }

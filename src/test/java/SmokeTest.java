@@ -18,11 +18,11 @@ public class SmokeTest extends BaseTest {
     * -Verify clicking device on Internet page will display device info with image,specs,and support.
     * -Verify Internet page will contain status, message(based on connection), and troubleshoot button
     * -Verify Internet page has right section with Check Email, Go to Security Suite, with optionals of Access Cloud Drive and Manage Web Space
-    * Verify Internet > Trouble shoot > click reset, displays loading modal and once completed shows Continue and Issue Resolved button
-    * Verify when clicking "Issue Resolved" button user is navigated to Internet page
+    * -Verify Internet > Trouble shoot > click reset, displays loading modal and once completed shows Continue and Issue Resolved button
+    * -Verify when clicking "Issue Resolved" button user is navigated to Internet page
     * -Verify Account Summary page loads as expected
-    * Verify Your services and Equipment section includes icons for TV, Internet and Voice
-    * Verify TV,Internet, and voice options all go to corresponding page
+    * -Verify Your services and Equipment section includes icons for TV, Internet and Voice
+    * -Verify TV,Internet, and voice options all go to corresponding page
     * -Verify Settings page loads as expected
     * -Verify TV page loads as expected
     * -Verify Billing page loads as expected
@@ -30,30 +30,32 @@ public class SmokeTest extends BaseTest {
     * -Verify mail icon directs to correct page
     * -Verify phone icon directs to correct page
     * -Verify support link directs to correct page
-    * -Verify username link directs to support page
+    * -Verify signout link directs to support page
     * -Verify User can sign in
     * -Verify Username link directs to correct page
-    * Verify if TV, Internet or Voice service is not included, upgrade link is present and directs to upgrade flow
+    * -Verify if TV, Internet or Voice service is not included, upgrade link is present and directs to upgrade flow
     * Verify when creating a new username email comes from a "spectrum.net" account
-    * Verify Search works as expected
+    * -Verify Search works as expected
     * */
 
     @Test
     public void smokeTest() throws AWTException {
 
-        String[] browsers = {"ie"};
+        String[] browsers = {"chrome"};
 
         //Account must have internet device
         String userName = "sstest01";
         String passWord = "Testing01";
         String last4Mac = "B52A";
+        String zipCode = "59102";
+        String accountWithUpgradeLinks = "billpaytest01";
         for (String browser : browsers) {
             ExtentManager.createTest(browser + " login", "Smoke Test");
             WebDriver driver = PreTest.getBrowserDrivers(browser);
             //driver.get("HTTPS://pc.engnew-spectrum.net/");
             driver.manage().window().maximize();
-            driver.get("HTTPS://charternet:Chart3rn3t@www.engnew-spectrum.net");
-            driver.get("https://www.engnew-spectrum.net");
+            driver.get("HTTPS://charternet:Chart3rn3t@www.engprod-spectrum.net");
+            driver.get("https://www.engprod-spectrum.net");
 
             //Ask Spectrum unauthenticated user
             ExtentManager.createTest("Ask spectrum should be available for unauthenticated users", "Smoke Test");
@@ -62,7 +64,7 @@ public class SmokeTest extends BaseTest {
                 AcAskSpectrum.verifyAskSpectrumWelcomeMessage(driver);
                 PgAskSpectrum.clickSpectrumXButton(driver);
                 PgAskSpectrum.clickSpectrumCloseButton(driver);
-            } catch (AssertionError a){
+            } catch (AssertionError a) {
                 //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
             }
 
@@ -71,41 +73,56 @@ public class SmokeTest extends BaseTest {
             try {
                 PgMenu.clickTopMenuButton(driver);
                 PgMenu.clickCreateAUserNameButton(driver);
+                PgForgotUsernamePassword.byPassZipCodeConfirmation(driver, zipCode);
                 AcCreateUserName.verifyCreateUsernameTitle(driver);
-                driver.navigate().back();
+                PgNavigation.clickSpectrumHeader(driver);
                 PgLanding.clickCreateAUsernameButton(driver);
                 AcCreateUserName.verifyCreateUsernameTitle(driver);
                 driver.navigate().back();
-            }catch(AssertionError|Exception e){
+            } catch (AssertionError | Exception e) {
                 PgNavigation.clickSpectrumHeader(driver);
             }
 
             //Forgot username/password link
             try {
-
                 ExtentManager.createTest("Verify clicking forgot username/pass navigates to forgot page", "Smoke Test");
                 PgLanding.clickForgotUserNameOrPassword(driver);
                 AcForgotUsernamePassword.verifyGetUsernameOrPassword(driver);
+            } catch (AssertionError | Exception e) {
+                PgNavigation.clickSpectrumHeader(driver);
+                PgLanding.clickForgotUserNameOrPassword(driver);
+            }
 
+            try {
                 ExtentManager.createTest("Verify clicking 'get username radio button' goes to get username page", "Smoke Test");
                 PgForgotUsernamePassword.selectRadioButton(driver, "get username");
                 PgForgotUsernamePassword.clickContinueButton(driver);
                 AcGetUsername.verifyGetUsernameTitle(driver);
                 driver.navigate().back();
+            } catch (AssertionError | Exception e) {
+                PgNavigation.clickSpectrumHeader(driver);
+                PgLanding.clickForgotUserNameOrPassword(driver);
+            }
 
+            try {
                 ExtentManager.createTest("Verify clicking \"get Password radio button\" goes to get password page", "Smoke Test");
                 PgForgotUsernamePassword.selectRadioButton(driver, "get password");
                 PgForgotUsernamePassword.clickContinueButton(driver);
                 AcGetPassword.verifyGetPasswordTitle(driver);
                 driver.navigate().back();
+            } catch (AssertionError | Exception e) {
+                PgNavigation.clickSpectrumHeader(driver);
+                PgLanding.clickForgotUserNameOrPassword(driver);
+            }
 
+            try {
                 ExtentManager.createTest("Verify clicking \"get username and password radio button\" goes to get username and password page", "Smoke Test");
                 PgForgotUsernamePassword.selectRadioButton(driver, "get username and password");
                 PgForgotUsernamePassword.clickContinueButton(driver);
                 AcGetUsernameAndPassword.verifyGetUserAndPassTitle(driver);
                 PgNavigation.clickSpectrumHeader(driver);
 
-            }catch(AssertionError|Exception e){
+            } catch (AssertionError | Exception e) {
                 PgNavigation.clickSpectrumHeader(driver);
             }
 
@@ -119,7 +136,36 @@ public class SmokeTest extends BaseTest {
             try {
                 AcAccountSummary.verifyBillingHeader(driver);
                 AcAccountSummary.ensureWhatsNewPopUpClosed(driver);
-            } catch (AssertionError a){
+            } catch (AssertionError a) {
+                //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
+            }
+
+            //Your Services and Equipment
+            ExtentManager.createTest("Verify Your services and Equipment section includes icons for TV, Internet and Voice", "Smoke Test");
+            try {
+                AcAccountSummary.verifyServiceAndEquipmentTVIcon(driver);
+                AcAccountSummary.verifyServiceAndEquipmentInternetIcon(driver);
+                AcAccountSummary.verifyServiceAndEquipmentVoiceIcon(driver);
+            } catch (AssertionError | Exception e) {
+                //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
+            }
+
+            //Your Services and Equipment links
+            ExtentManager.createTest("Verify TV,Internet, and voice options all go to corresponding page", "Smoke Test");
+            try {
+                //Verify TV
+                PgAccountSummary.clickServicesAndEquipmentTVButton(driver);
+                AcTV.verifyTVServicesAndEquipmentHeader(driver);
+                //Verify internet
+                PgNavigation.clickAccountSummaryLink(driver);
+                PgAccountSummary.clickServicesAndEquipmentInternetButton(driver);
+                AcInternet.verifyInternetServicesAndEquipmentHeader(driver);
+                //Verify Voice
+                PgNavigation.clickAccountSummaryLink(driver);
+                PgAccountSummary.clickServicesAndEquipmentVoiceButton(driver);
+                AcVoice.verifyVoiceServicesAndEquipmentHeader(driver);
+
+            } catch (AssertionError | Exception e) {
                 //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
             }
 
@@ -130,7 +176,7 @@ public class SmokeTest extends BaseTest {
                 AcAccountSummary.ensureWhatsNewPopUpClosed(driver);
                 AcBilling.verifyBillingHeader(driver);
                 AcBilling.verifyStatementsHeader(driver);
-            } catch (AssertionError|Exception e){
+            } catch (AssertionError | Exception e) {
                 //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
             }
 
@@ -140,7 +186,7 @@ public class SmokeTest extends BaseTest {
                 PgNavigation.clickTVLink(driver);
                 AcTV.verifyTVServicesAndEquipmentHeader(driver);
                 AcTV.verifyToolsHeader(driver);
-            } catch (AssertionError a){
+            } catch (AssertionError | Exception e) {
                 //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
             }
 
@@ -150,30 +196,48 @@ public class SmokeTest extends BaseTest {
                 PgNavigation.clickInternetLink(driver);
                 AcInternet.verifyInternetServicesAndEquipmentHeader(driver);
                 AcInternet.verifyDevicesHeader(driver);
+            } catch (AssertionError | Exception e) {
+                Common.sleep(5000);
+            }
 
-                ExtentManager.createTest("Verify Internet page has right section with Check Email, Go to Security Suite, with optionals of Access Cloud Drive and Manage Web Space", "Smoke Test");
+            ExtentManager.createTest("Verify Internet page has right section with Check Email, Go to Security Suite, with optionals of Access Cloud Drive and Manage Web Space", "Smoke Test");
+            try {
                 AcInternet.verifyCheckEmailLink(driver);
                 AcInternet.verifyGotoSecuritySuiteLink(driver);
+            } catch (AssertionError | Exception e) {
+                Common.sleep(5000);
+            }
 
+            try {
                 ExtentManager.createTest("Verify clicking device on Internet page will display device info with image,specs,and support.", "Smoke Test");
-                PgInternet.clickDeviceBasedOnRowNumber(driver,"1");
+                PgInternet.clickDeviceBasedOnRowNumber(driver, "1");
                 AcDeviceInfo.verifyDeviceImagePresence(driver);
                 AcDeviceInfo.verifySpecificationsTitle(driver);
-                AcDeviceInfo.verifyProductSpecifications(driver,".+",".+");
+                AcDeviceInfo.verifyProductSpecifications(driver, ".+", ".+");
                 AcDeviceInfo.verifySupportTitle(driver);
                 AcDeviceInfo.verifySupportLinkPresent(driver);
-                driver.navigate().back();
+                PgNavigation.clickInternetLink(driver);
+            } catch (AssertionError | Exception e) {
+                PgNavigation.clickInternetLink(driver);
+            }
 
+            try {
                 ExtentManager.createTest("Verify Internet > Trouble shoot > click reset, displays loading modal and once completed shows Continue and Issue Resolved button", "Smoke Test");
+                PgInternet.clickTroubleShootButton(driver);
                 PgInternet.clickTroubleShootButton(driver);
                 PgInternetTroubleshooting.clickResetModemButton(driver);
                 AcInternetTroubleshooting.verifyModemResetModal(driver);
                 AcInternetTroubleshooting.waitForModemResetCompletion(driver);
-                AcInternetTroubleshooting.verifyContinueButtonPresent(driver);
-                AcInternetTroubleshooting.verifyIssueResolvedButtonPresent(driver);
-                PgNavigation.clickSpectrumHeader(driver);
+                AcInternetTroubleshooting.verifyModalContinueButtonPresent(driver);
+                AcInternetTroubleshooting.verifyModalIssueResolvedButtonPresent(driver);
 
-            } catch (AssertionError|Exception e){
+                ExtentManager.createTest("Verify when clicking \"Issue Resolved\" button user is navigated to Internet page", "Smoke Test");
+                PgInternetTroubleshooting.clickModalIssueResolvedButton(driver);
+                AcInternet.verifyInternetServicesAndEquipmentHeader(driver);
+
+            } catch (AssertionError | Exception e) {
+                PgInternet.closeModemResetModalIfPresent(driver);
+                Common.sleep(1000);
                 PgNavigation.clickSpectrumHeader(driver);
 
             }
@@ -181,10 +245,10 @@ public class SmokeTest extends BaseTest {
             ExtentManager.createTest("Verify Voice page loads as expected", "Smoke Test");
             try {
                 PgNavigation.clickVoiceLink(driver);
-                QuickActions.ensureVerifyAccountPopUpClosed(driver,last4Mac);
+                QuickActions.ensureVerifyAccountPopUpClosed(driver, last4Mac);
                 AcVoice.verifyVoiceServicesAndEquipmentHeader(driver);
                 AcVoice.verifyDevicesHeader(driver);
-            } catch (AssertionError a){
+            } catch (AssertionError | Exception e) {
                 //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
             }
 
@@ -194,12 +258,12 @@ public class SmokeTest extends BaseTest {
                 PgNavigation.clickSettingsLink(driver);
                 AcSettings.verifySettingsHeader(driver);
                 AcSettings.verifyContactInfoHeader(driver);
-            } catch (AssertionError a){
+            } catch (AssertionError | Exception e) {
                 //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
             }
 
             //Ask Spectrum
-            ExtentManager.createTest("Verify Ask Spectrum can be minimized, reduced, and maximized</br>"+"Ask spectrum should be available for authenticated users", "Smoke Test");
+            ExtentManager.createTest("Verify Ask Spectrum can be minimized, reduced, and maximized</br>" + "Ask spectrum should be available for authenticated users", "Smoke Test");
             try {
                 PgAskSpectrum.clickAskSpectrumChatButton(driver);
                 AcAskSpectrum.verifyAskSpectrumWelcomeMessage(driver);
@@ -209,23 +273,23 @@ public class SmokeTest extends BaseTest {
                 PgAskSpectrum.clickSpectrumContractButton(driver);
 
                 //ensures maximized chat is not still present before getting new coordinate
-                Common.verifyElementNotVisible(driver,"//button[@id= 'alme-contract-button']",5);
+                Common.verifyElementNotVisible(driver, "//button[@id= 'alme-contract-button']", 5);
                 //get ask spectrum Y coordinate while reduced for comparison
                 int contractedY = AcAskSpectrum.getAskSpectrumCoordinate(driver, "y");
 
                 //verify maximized Y value to reduced Y value, if reduced value is higher, then ask spectrum successfully went to contracted version and was originally at max version
-                Comparison.verifyHigherIntValue(contractedY,maximizedY);
+                Comparison.verifyHigherIntValue(contractedY, maximizedY);
                 PgAskSpectrum.clickSpectrumMinimizeButton(driver);
 
                 //ensures reduced chat is not still present before getting new coordinate
-                Common.verifyElementNotVisible(driver,"//button[@id= 'alme-expand-button']",5);
+                Common.verifyElementNotVisible(driver, "//button[@id= 'alme-expand-button']", 5);
                 //get ask spectrum Y coordinate while minimized for comparison
-                int minimizedY = AcAskSpectrum.getAskSpectrumCoordinate(driver,"y");
+                int minimizedY = AcAskSpectrum.getAskSpectrumCoordinate(driver, "y");
                 //verify contracted Y value to minimized Y value, if minimized value is higher, then ask spectrum successfully minimized
-                Comparison.verifyHigherIntValue(minimizedY,contractedY);
+                Comparison.verifyHigherIntValue(minimizedY, contractedY);
 
 
-            } catch (AssertionError a){
+            } catch (AssertionError | Exception e) {
                 //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
             }
 
@@ -234,9 +298,9 @@ public class SmokeTest extends BaseTest {
             try {
                 PgNavigation.clickmailLink(driver);
                 String mailURL = driver.getCurrentUrl();
-                Comparison.verifyStringMatch("https://mail2.(engprod|engnew)-spectrum.net.*",mailURL);
+                Comparison.verifyStringMatch("https://www.spectrum.net.*mail.*", mailURL);
                 driver.navigate().back();
-            }catch (AssertionError a){
+            } catch (AssertionError | Exception e) {
                 //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
             }
 
@@ -245,9 +309,9 @@ public class SmokeTest extends BaseTest {
             try {
                 PgNavigation.clickVoiceOnlineManagerLink(driver);
                 String voiceURL = driver.getCurrentUrl();
-                Comparison.verifyStringMatch("https://(engprod|www.engnew)-spectrum.net/voice/",voiceURL);
+                Comparison.verifyStringMatch("https://www.(engprod|engnew)-spectrum.net/voice/", voiceURL);
                 driver.navigate().back();
-            }catch (AssertionError a){
+            } catch (AssertionError | Exception e) {
                 //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
             }
 
@@ -256,20 +320,41 @@ public class SmokeTest extends BaseTest {
             try {
                 PgNavigation.clickSupportLink(driver);
                 String supportURL = driver.getCurrentUrl();
-                Comparison.verifyStringMatch("http://(www.engnew|engprod)-spectrum.net/support/",supportURL);
-                driver.navigate().back();
-            }catch (AssertionError a){
+                Comparison.verifyStringMatch("https://www.(engnew|engprod)-spectrum.net/support/", supportURL);
+            } catch (AssertionError | Exception e) {
                 //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
             }
 
-            //Username
-            ExtentManager.createTest("Verify Username link directs to correct page", "Smoke Test");
+            //sign out
+            ExtentManager.createTest("Verify Sign out link directs to correct page", "Smoke Test");
             try {
-                PgNavigation.clickUserNameLink(driver,userName);
-                AcSettings.verifySettingsHeader(driver);
-                AcSettings.verifyContactInfoHeader(driver);
-                driver.navigate().back();
-            }catch (AssertionError a){
+                PgNavigation.clickSignOutLink(driver);
+                AcLanding.verifySignInToGetStartedSection(driver);
+            } catch (AssertionError | Exception e) {
+                //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
+            }
+
+            //Verify Search works as expected
+            try {
+                PgNavigation.clickSearchButtonIcon(driver);
+                PgNavigation.enterTextSearchField(driver, "hello");
+                PgNavigation.clickSearchButton(driver);
+                AcSearchResults.verifySpectrumResultsHeader(driver);
+            } catch (AssertionError | Exception e) {
+                //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
+            }
+
+            //Verify if TV, Internet or Voice service is not included, upgrade link is present and directs to upgrade flow
+            ExtentManager.createTest("Verify if TV, Internet or Voice service is not included, upgrade link is present and directs to upgrade flow", "Smoke Test");
+            try{
+                PgNavigation.clickSpectrumHeader(driver);
+                QuickActions.login(driver, accountWithUpgradeLinks, passWord, browser);
+                AcAccountSummary.waitForNoBillLoadingSpinner(driver);
+                AcAccountSummary.ensureWhatsNewPopUpClosed(driver);
+                PgAccountSummary.clickFirstAddServiceButton(driver);
+                String URL = driver.getCurrentUrl();
+                Comparison.verifyStringMatch(".*ispectrum.com/buyflow.*", URL);
+            }catch (AssertionError | Exception e) {
                 //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
             }
         }

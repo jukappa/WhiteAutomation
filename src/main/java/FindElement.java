@@ -15,7 +15,7 @@ public class FindElement {
     public static WebElement waitForElementXpath (WebDriver driver,String xpath,String description){
         WebElement element;
         try {
-            element = (new WebDriverWait(driver, 10))
+            element = (new WebDriverWait(driver, 30))
                     .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
             ExtentManager.stepReport(Status.PASS,description+ " successfully located");
             return element;
@@ -29,7 +29,7 @@ public class FindElement {
     public static WebElement waitForElementID (WebDriver driver,String ID, String description){
         WebElement element;
         try {
-            element = (new WebDriverWait(driver, 10))
+            element = (new WebDriverWait(driver, 30))
                     .until(ExpectedConditions.visibilityOfElementLocated(By.id(ID)));
             ExtentManager.stepReport(Status.PASS,description+ " successfully located");
             return element;

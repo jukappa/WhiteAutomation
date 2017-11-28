@@ -23,4 +23,17 @@ public class PgForgotUsernamePassword {
     public static void clickContinueButton(WebDriver driver) {
         FindElement.waitForElementXpath(driver, "//button[@type= 'submit'][text() = 'Continue']", "Continue button").click();
     }
+
+    //click continue button
+    public static void byPassZipCodeConfirmation(WebDriver driver, String zipCode) {
+
+        driver.navigate().refresh();
+        String URL = driver.getCurrentUrl();
+        if (URL.matches("https://www.(engprod|engnew)-spectrum.net/unauthenticated-routing.*")){
+            String zipFieldID = "zipcode";
+            FindElement.waitForElementID(driver,zipFieldID,"Service zip code field").sendKeys(zipCode);
+            PgForgotUsernamePassword.clickContinueButton(driver);
+        }
+
+    }
 }

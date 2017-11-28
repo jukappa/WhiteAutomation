@@ -84,16 +84,18 @@ public class Common {
 
         int i = 0;
         boolean flag = false;
-        while (i < secondsToVerify * 4) {
-            boolean element = driver.findElement(By.xpath(xpath)).isDisplayed();
-            if (element) {
-                Common.sleep(250);
-                flag = TRUE;
-                i++;
-            } else {
-                i = secondsToVerify * 4;
-                flag = FALSE;
+        try {
+            while (i < secondsToVerify * 4) {
+                boolean element = driver.findElement(By.xpath(xpath)).isDisplayed();
+                if (element) {
+                    Common.sleep(250);
+                    flag = TRUE;
+                    i++;
+                }
+
             }
+        } catch (Exception e) {
+            flag = FALSE;
 
         }
         return flag;
@@ -105,7 +107,7 @@ public class Common {
         StackTraceElement[] stack = Thread.currentThread().getStackTrace();
         int i = 0;
         for (StackTraceElement stackElement : stack) {
-            if (stackElement.toString().toUpperCase().contains("TEST")&& (!stackElement.toString().toUpperCase().contains("COMMON"))) {
+            if (stackElement.toString().toUpperCase().contains("TEST") && (!stackElement.toString().toUpperCase().contains("COMMON"))) {
                 return Thread.currentThread().getStackTrace()[i].getLineNumber();
             } else {
                 i++;

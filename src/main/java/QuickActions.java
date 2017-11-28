@@ -12,6 +12,7 @@ public class QuickActions {
         PgLanding.enterUserName(driver, userName);
         PgLanding.enterPassword(driver, passWord);
         PgLanding.clickSignIn(driver);
+        Common.sleep(2000);
         PgLanding.clickSignIn(driver);
         if (browser.toUpperCase().equals("CHROME")) {
             Common.sleep(4000);
@@ -20,7 +21,7 @@ public class QuickActions {
             PgLanding.enterPassword(driver, passWord);
             PgLanding.clickSignIn(driver);
         }
-        Common.sleep(2000);
+        Common.sleep(3000);
         Robot rob = new Robot();
         rob.keyPress((KeyEvent.VK_ESCAPE));
         rob.keyRelease((KeyEvent.VK_ESCAPE));

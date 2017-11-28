@@ -31,4 +31,19 @@ public class AcAccountSummary {
             Common.sleep(1000);
         }
     }
+
+    //Verify the TV Icon under your services and equipment
+    public static void verifyServiceAndEquipmentTVIcon(WebDriver driver) {
+        FindElement.waitForElementXpath(driver,"//a[@class = 'service-icon']//img[@class = 'tv-image']","Tv icon");
+    }
+
+    //Verify the Internet and Wifi Icon under your services and equipment
+    public static void verifyServiceAndEquipmentInternetIcon(WebDriver driver) {
+        FindElement.waitForElementXpath(driver,"//a[@class = 'service-icon']//img[contains(@src, 'internet-service-active')]","Internet and wifi icon");
+    }
+
+    //Verify the Voice Icon under your services and equipment
+    public static void verifyServiceAndEquipmentVoiceIcon(WebDriver driver) {
+        FindElement.waitForElementXpath(driver,"//a[@class = 'service-icon']//img[contains(@src, 'voice-service-active')]","Voice icon");
+    }
 }

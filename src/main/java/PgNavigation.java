@@ -55,13 +55,13 @@ public class PgNavigation {
     }
     //Clicks the mail icon button
     public static void clickmailLink(WebDriver driver) {
-        String linkXpath = "//span[@class = 'mat-button-wrapper']//md-icon[contains(@class ,'email-icon')]";
+        String linkXpath = "//span[@class = 'mat-button-wrapper']//*[contains(@class ,'email-icon')]";
         FindElement.waitForElementXpath(driver,linkXpath,"mail icon link").click();
         ExtentManager.stepReport(Status.PASS, "mail icon link clicked successfully");
     }
     //Clicks the phone icon button
     public static void clickVoiceOnlineManagerLink(WebDriver driver) {
-        String linkXpath = "//div[@class = 'app-header-utility']//md-icon[contains(@class, 'phone-icon')]";
+        String linkXpath = "//div[@class = 'app-header-utility']//*[contains(@class, 'phone-icon')]";
         FindElement.waitForElementXpath(driver,linkXpath,"phone icon link").click();
         ExtentManager.stepReport(Status.PASS, "phone icon link clicked successfully");
     }
@@ -72,10 +72,31 @@ public class PgNavigation {
         ExtentManager.stepReport(Status.PASS, "Support link clicked successfully");
     }
 
-    //Clicks Support link
-    public static void clickUserNameLink(WebDriver driver, String userName) {
-        String linkXpath = "//span[@class = 'mat-button-wrapper']//span[text() = '"+userName+"']";
+    //Clicks Sign out Link
+    public static void clickSignOutLink(WebDriver driver) {
+        String linkXpath = "//span[@class = 'mat-button-wrapper']//span[text() = 'Sign Out']";
         FindElement.waitForElementXpath(driver,linkXpath,"Support link").click();
-        ExtentManager.stepReport(Status.PASS, "username link clicked successfully");
+        ExtentManager.stepReport(Status.PASS, "Sign out link clicked successfully");
+    }
+
+    //Clicks Search button icon
+    public static void clickSearchButtonIcon(WebDriver driver) {
+        String linkXpath = "//button[@class='search-button icon-button']//mat-icon";
+        FindElement.waitForElementXpath(driver,linkXpath,"Search button icon").click();
+        ExtentManager.stepReport(Status.PASS, "Search button icon clicked successfully");
+    }
+
+    //enter text into search field
+    public static void enterTextSearchField(WebDriver driver, String text) {
+        String linkXpath = "//div[@class = 'search-row']//input";
+        FindElement.waitForElementXpath(driver,linkXpath,"Search button text field").sendKeys(text);
+        ExtentManager.stepReport(Status.PASS, "Search button text field text entered successfully");
+    }
+
+    //Clicks Search button
+    public static void clickSearchButton(WebDriver driver) {
+        String linkXpath = "//button[@aria-label='View all results']";
+        FindElement.waitForElementXpath(driver,linkXpath,"Search button").click();
+        ExtentManager.stepReport(Status.PASS, "Search button successfully");
     }
 }

@@ -21,7 +21,7 @@ public class PgLanding{
 
     }
     public static void clickSignIn(WebDriver driver) {
-        WebElement element = FindElement.waitForElementXpath(driver,"//button[@type = 'submit']","Login sign in button");
+        WebElement element = FindElement.waitForElementXpath(driver,"//kite-button[@class = 'sign-in']//button","Login sign in button");
         element.click();
         ExtentManager.stepReport(Status.INFO,"login sign in was clicked");
     }
