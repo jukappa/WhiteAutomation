@@ -3,6 +3,8 @@ import org.testng.annotations.Test;
 
 import java.awt.*;
 
+import static java.lang.Boolean.FALSE;
+
 public class SmokeTest extends BaseTest {
 
     //Scenarios
@@ -53,14 +55,17 @@ public class SmokeTest extends BaseTest {
         String passWord = "Testing01";
         String last4Mac = "B52A";
         String zipCode = "59102";
+        String https = "https://";
+        String securityPreText = "charternet:Chart3rn3t@";
+        String baseURL = "www.engprod-spectrum.net";
         String accountWithUpgradeLinks = "billpaytest01";
         for (String browser : browsers) {
             ExtentManager.createTest(browser + " login", "Smoke Test");
             WebDriver driver = PreTest.getBrowserDrivers(browser);
             //driver.get("HTTPS://pc.engnew-spectrum.net/");
             driver.manage().window().maximize();
-            driver.get("HTTPS://charternet:Chart3rn3t@www.engprod-spectrum.net");
-            driver.get("https://www.engprod-spectrum.net");
+            driver.get(https+securityPreText+baseURL);
+            driver.get(https+baseURL);
 
             //Ask Spectrum unauthenticated user
             ExtentManager.createTest("Ask spectrum should be available for unauthenticated users", "Smoke Test");
@@ -229,7 +234,7 @@ public class SmokeTest extends BaseTest {
             try {
                 ExtentManager.createTest("Verify Internet > Trouble shoot > click reset, displays loading modal and once completed shows Continue and Issue Resolved button", "Smoke Test");
                 PgInternet.clickTroubleShootButton(driver);
-                PgInternet.clickTroubleShootButton(driver);
+                //PgInternet.clickTroubleShootButton(driver);
                 PgInternetTroubleshooting.clickResetModemButton(driver);
                 AcInternetTroubleshooting.verifyModemResetModal(driver);
                 AcInternetTroubleshooting.waitForModemResetCompletion(driver);
@@ -242,7 +247,7 @@ public class SmokeTest extends BaseTest {
 
             } catch (AssertionError | Exception e) {
                 PgInternet.closeModemResetModalIfPresent(driver);
-                driver.navigate().to("www.engprod-spectrum.net");
+                driver.navigate().to(https+baseURL);
 
             }
             //Voice
@@ -340,10 +345,12 @@ public class SmokeTest extends BaseTest {
 
             //Verify Search works as expected
             try {
+                ExtentManager.createTest("Verify Search works as expected", "Smoke Test");
                 PgNavigation.clickSearchButtonIcon(driver);
                 PgNavigation.enterTextSearchField(driver, "hello");
                 PgNavigation.clickSearchButton(driver);
-                AcSearchResults.verifySpectrumResultsHeader(driver);
+                Common.sleep(2000);
+                AcSearchResults.verifySpectrumResultsHeader(driver, FALSE);
             } catch (AssertionError | Exception e) {
                 //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
             }

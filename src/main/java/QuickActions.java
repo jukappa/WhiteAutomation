@@ -21,7 +21,6 @@ public class QuickActions {
             Common.sleep(1000);
             Robot rob = new Robot();
             rob.keyPress((KeyEvent.VK_ESCAPE));
-
             rob.keyRelease((KeyEvent.VK_ESCAPE));
             Common.sleep(1000);
             rob.keyPress((KeyEvent.VK_ESCAPE));

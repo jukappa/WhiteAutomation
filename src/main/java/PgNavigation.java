@@ -96,6 +96,8 @@ public class PgNavigation {
 
     //Clicks Search button
     public static void clickSearchButton(WebDriver driver) {
+        //wait added to avoid issue with clicking search too fast
+        Common.sleep(1000);
         String linkXpath = "//button[@aria-label='View all results']";
         FindElement.waitForElementXpath(driver,linkXpath,"Search button").click();
         ExtentManager.stepReport(Status.PASS, "Search button successfully");

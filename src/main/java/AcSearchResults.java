@@ -1,12 +1,15 @@
 import org.openqa.selenium.WebDriver;
 
 public class AcSearchResults {
-    public static void verifySpectrumResultsHeader(WebDriver driver) {
+    public static void verifySpectrumResultsHeader(WebDriver driver, boolean allowZeroResults) {
+
+        String regex = "Spectrum.net \\([1-9][0-9]* results\\)";
+        if (allowZeroResults){
+            regex = "Spectrum.net \\(\\d+ results\\)";
+        }
         String titleXpath = "//li[@class = 'active'][contains(@ng-class ,'charter')]";
-        String resultsXpath = "//li[@class = 'active'][contains(@ng-class ,'charter')]//small";
         String title = FindElement.waitForElementXpath(driver, titleXpath, "Spectrum.net title header tab").getText();
-        String results = FindElement.waitForElementXpath(driver, resultsXpath, "Spectrum.net results header tab").getText();
-        Comparison.verifyStringMatch("Spectrum.net \\(\\d+ results\\)", title+" "+results);
+        Comparison.verifyStringMatch(regex, title);
 
     }
 }

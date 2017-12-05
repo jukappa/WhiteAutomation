@@ -14,7 +14,7 @@ public class AcAccountSummary {
     //waits for the loading spinner to disappear before continuing next action
     public static void waitForNoBillLoadingSpinner(WebDriver driver) {
 
-        (new WebDriverWait(driver, 30))
+        (new WebDriverWait(driver, 40))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class = 'loading-overlay hidden']")));
     }
 
