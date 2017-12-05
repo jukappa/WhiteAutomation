@@ -68,8 +68,8 @@ public class SmokeTest extends BaseTest {
             WebDriver driver = PreTest.getBrowserDrivers(browser);
             //driver.get("HTTPS://pc.engnew-spectrum.net/");
             driver.manage().window().maximize();
-            driver.get(https+securityPreText+baseURL);
-            driver.get(https+baseURL);
+            driver.get(https + securityPreText + baseURL);
+            driver.get(https + baseURL);
 
             //Ask Spectrum unauthenticated user
             ExtentManager.createTest("Ask spectrum should be available for unauthenticated users", "Smoke Test");
@@ -222,9 +222,9 @@ public class SmokeTest extends BaseTest {
                 Common.sleep(5000);
             }
 
-            ExtentManager.createTest("Verify Internet page will contain status, message(based on connection), and troubleshoot button","Smoke Test");
+            ExtentManager.createTest("Verify Internet page will contain status, message(based on connection), and troubleshoot button", "Smoke Test");
             try {
-                AcInternet.verifyInternetStatusHeader(driver,"Connected");
+                AcInternet.verifyInternetStatusHeader(driver, "Connected");
                 AcInternet.verifyTroubleShootButton(driver);
             } catch (AssertionError | Exception e) {
                 Common.sleep(5000);
@@ -258,7 +258,7 @@ public class SmokeTest extends BaseTest {
 
             } catch (AssertionError | Exception e) {
                 PgInternet.closeModemResetModalIfPresent(driver);
-                driver.navigate().to(https+baseURL);
+                driver.navigate().to(https + baseURL);
 
             }
             //Voice
@@ -368,7 +368,7 @@ public class SmokeTest extends BaseTest {
 
             //Verify if TV, Internet or Voice service is not included, upgrade link is present and directs to upgrade flow
             ExtentManager.createTest("Verify if TV, Internet or Voice service is not included, upgrade link is present and directs to upgrade flow", "Smoke Test");
-            try{
+            try {
                 PgNavigation.clickSpectrumHeader(driver);
                 QuickActions.login(driver, accountWithUpgradeLinks, passWord, browser);
                 AcAccountSummary.waitForNoBillLoadingSpinner(driver);
@@ -376,7 +376,7 @@ public class SmokeTest extends BaseTest {
                 PgAccountSummary.clickFirstAddServiceButton(driver);
                 String URL = driver.getCurrentUrl();
                 Comparison.verifyStringMatch(".*ispectrum.com/buyflow.*", URL);
-            }catch (AssertionError | Exception e) {
+            } catch (AssertionError | Exception e) {
                 //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
             }
         }
