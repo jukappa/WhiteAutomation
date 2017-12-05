@@ -25,9 +25,6 @@ public class QuickActions {
             Common.sleep(1000);
             rob.keyPress((KeyEvent.VK_ESCAPE));
             rob.keyRelease((KeyEvent.VK_ESCAPE));
-            Common.sleep(1000);
-            rob.keyPress((KeyEvent.VK_ESCAPE));
-            rob.keyRelease((KeyEvent.VK_ESCAPE));
         } else if (browser.toUpperCase().equals("IE")) {
             Common.sleep(2000);
             PgLanding.clickSignIn(driver);
