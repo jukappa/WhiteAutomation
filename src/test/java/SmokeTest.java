@@ -34,7 +34,6 @@ public class SmokeTest extends BaseTest {
     * -Verify support link directs to correct page
     * -Verify signout link directs to support page
     * -Verify User can sign in
-    * -Verify Username link directs to correct page
     * -Verify if TV, Internet or Voice service is not included, upgrade link is present and directs to upgrade flow
     * -Verify Search works as expected
     * */
@@ -42,6 +41,11 @@ public class SmokeTest extends BaseTest {
     //Scenario not automated
     /*
     Verify when creating a new username email comes from a "spectrum.net" account
+    */
+
+    //Scenarios descoped
+    /*
+    Verify Username link directs to correct page
     */
 
 
@@ -218,6 +222,13 @@ public class SmokeTest extends BaseTest {
                 Common.sleep(5000);
             }
 
+            ExtentManager.createTest("Verify Internet page will contain status, message(based on connection), and troubleshoot button","Smoke Test");
+            try {
+                AcInternet.verifyInternetStatusHeader(driver,"Connected");
+                AcInternet.verifyTroubleShootButton(driver);
+            } catch (AssertionError | Exception e) {
+                Common.sleep(5000);
+            }
             try {
                 ExtentManager.createTest("Verify clicking device on Internet page will display device info with image,specs,and support.", "Smoke Test");
                 PgInternet.clickDeviceBasedOnRowNumber(driver, "1");

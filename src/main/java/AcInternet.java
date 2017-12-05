@@ -21,4 +21,15 @@ public class AcInternet {
     public static void verifyGotoSecuritySuiteLink(WebDriver driver) {
         FindElement.waitForElementXpath(driver,"//a[@id = 'my_internet_services_email_link']//ancestor::ul//a[text() = 'Go to Security Suite']","Internet page - Go to Security Suite");
     }
+
+    //verify internet status header
+    public static void verifyInternetStatusHeader(WebDriver driver, String connectionStatus) {
+        String status = FindElement.waitForElementXpath(driver,"//p[text() = 'Internet Status: ']","Internet page - Internet Status connection").getText();
+        Comparison.verifyStringMatch("Internet Status: "+connectionStatus,status);
+    }
+
+    //verify trouble shoot button
+    public static void verifyTroubleShootButton(WebDriver driver) {
+        FindElement.waitForElementXpath(driver,"//a[text() = 'Troubleshoot']","Internet page - Trouble shoot button");
+    }
 }
