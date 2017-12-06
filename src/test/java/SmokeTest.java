@@ -144,10 +144,14 @@ public class SmokeTest extends BaseTest {
             QuickActions.firstTimeLogin(driver, userName, passWord, browser);
             AcAccountSummary.waitForNoBillLoadingSpinner(driver);
             AcAccountSummary.ensureWhatsNewPopUpClosed(driver);
+            //ensure CPNI compliant
+            PgNavigation.clickVoiceLink(driver);
+            QuickActions.ensureCPNICompliant(driver,last4Mac);
 
             //Account Summary
             ExtentManager.createTest("Verify Account Summary page loads as expected", "Smoke Test");
             try {
+                PgNavigation.clickAccountSummaryLink(driver);
                 AcAccountSummary.verifyBillingHeader(driver);
                 AcAccountSummary.ensureWhatsNewPopUpClosed(driver);
             } catch (AssertionError a) {
@@ -265,7 +269,6 @@ public class SmokeTest extends BaseTest {
             ExtentManager.createTest("Verify Voice page loads as expected", "Smoke Test");
             try {
                 PgNavigation.clickVoiceLink(driver);
-                QuickActions.ensureVerifyAccountPopUpClosed(driver, last4Mac);
                 AcVoice.verifyVoiceServicesAndEquipmentHeader(driver);
                 AcVoice.verifyDevicesHeader(driver);
             } catch (AssertionError | Exception e) {
