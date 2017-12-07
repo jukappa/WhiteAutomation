@@ -21,7 +21,7 @@ public class QuickActions {
             Robot rob = new Robot();
             rob.keyPress((KeyEvent.VK_ESCAPE));
             rob.keyRelease((KeyEvent.VK_ESCAPE));
-            Common.sleep(1000);
+            PgLanding.clickSignIn(driver);
             rob.keyPress((KeyEvent.VK_ESCAPE));
             rob.keyRelease((KeyEvent.VK_ESCAPE));
         } else if (browser.toUpperCase().equals("IE")) {

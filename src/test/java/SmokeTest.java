@@ -112,7 +112,7 @@ public class SmokeTest extends BaseTest {
                 PgForgotUsernamePassword.selectRadioButton(driver, "get username");
                 PgForgotUsernamePassword.clickContinueButton(driver);
                 AcGetUsername.verifyGetUsernameTitle(driver);
-                driver.navigate().back();
+                driver.navigate().to(https+baseURL+"/forgot");
             } catch (AssertionError | Exception e) {
                 PgNavigation.clickSpectrumHeader(driver);
                 PgLanding.clickForgotUserNameOrPassword(driver);
@@ -123,7 +123,7 @@ public class SmokeTest extends BaseTest {
                 PgForgotUsernamePassword.selectRadioButton(driver, "get password");
                 PgForgotUsernamePassword.clickContinueButton(driver);
                 AcGetPassword.verifyGetPasswordTitle(driver);
-                driver.navigate().back();
+                driver.navigate().to(https+baseURL+"/forgot");
             } catch (AssertionError | Exception e) {
                 PgNavigation.clickSpectrumHeader(driver);
                 PgLanding.clickForgotUserNameOrPassword(driver);
