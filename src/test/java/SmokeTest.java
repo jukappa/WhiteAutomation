@@ -322,7 +322,7 @@ public class SmokeTest extends BaseTest {
                 PgNavigation.clickmailLink(driver);
                 String mailURL = driver.getCurrentUrl();
                 Comparison.verifyStringMatch("https://www.spectrum.net.*mail.*", mailURL);
-                driver.navigate().back();
+                driver.navigate().to(https+baseURL);
             } catch (AssertionError | Exception e) {
                 //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
             }
@@ -333,7 +333,7 @@ public class SmokeTest extends BaseTest {
                 PgNavigation.clickVoiceOnlineManagerLink(driver);
                 String voiceURL = driver.getCurrentUrl();
                 Comparison.verifyStringMatch("https://www.(engprod|engnew)-spectrum.net/voice/", voiceURL);
-                driver.navigate().back();
+                driver.navigate().to(https+baseURL);
             } catch (AssertionError | Exception e) {
                 //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
             }
