@@ -61,7 +61,7 @@ public class SmokeTest extends BaseTest {
         String zipCode = "59102";
         String https = "https://";
         String securityPreText = "charternet:Chart3rn3t@";
-        String baseURL = "www.engprod-spectrum.net";
+        String baseURL = "www.engnew-spectrum.net";
         String accountWithUpgradeLinks = "billpaytest01";
         for (String browser : browsers) {
             ExtentManager.createTest(browser + " login", "Smoke Test");
@@ -181,7 +181,7 @@ public class SmokeTest extends BaseTest {
                 //Verify Voice
                 PgNavigation.clickAccountSummaryLink(driver);
                 PgAccountSummary.clickServicesAndEquipmentVoiceButton(driver);
-                AcVoice.verifyVoiceServicesAndEquipmentHeader(driver);
+                AcVoice.verifyVoiceServiceAndEquipmentHeader(driver);
 
             } catch (AssertionError | Exception e) {
                 //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
@@ -192,8 +192,10 @@ public class SmokeTest extends BaseTest {
             try {
                 PgNavigation.clickBillingLink(driver);
                 AcAccountSummary.ensureWhatsNewPopUpClosed(driver);
-                AcBilling.verifyBillingHeader(driver);
-                AcBilling.verifyStatementsHeader(driver);
+                AcBilling.makeAPaymentHeader(driver);
+                AcBilling.manageScheduledPaymentsHeader(driver);
+                AcBilling.manageAutopayHeader(driver);
+                AcBilling.verifyViewBillingStatementHeader(driver);
             } catch (AssertionError | Exception e) {
                 //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
             }
@@ -203,7 +205,7 @@ public class SmokeTest extends BaseTest {
             try {
                 PgNavigation.clickTVLink(driver);
                 AcTV.verifyTVServicesAndEquipmentHeader(driver);
-                AcTV.verifyToolsHeader(driver);
+                AcTV.verifyEquipmentHeader(driver);
             } catch (AssertionError | Exception e) {
                 //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
             }
@@ -235,11 +237,12 @@ public class SmokeTest extends BaseTest {
             }
             try {
                 ExtentManager.createTest("Verify clicking device on Internet page will display device info with image,specs,and support.", "Smoke Test");
-                PgInternet.clickDeviceBasedOnRowNumber(driver, "1");
+                PgInternet.clickEquipmentBasedOnRowNumber(driver, "1");
                 AcDeviceInfo.verifyDeviceImagePresence(driver);
-                AcDeviceInfo.verifySpecificationsTitle(driver);
                 AcDeviceInfo.verifyProductSpecifications(driver, ".+", ".+");
-                AcDeviceInfo.verifySupportTitle(driver);
+                //Support modified and seems incomplete in engnew 3.55.0
+                //AcDeviceInfo.verifySpecificationsTitle(driver);
+                //AcDeviceInfo.verifySupportTitle(driver);
                 AcDeviceInfo.verifySupportLinkPresent(driver);
                 PgNavigation.clickInternetLink(driver);
             } catch (AssertionError | Exception e) {
@@ -269,8 +272,8 @@ public class SmokeTest extends BaseTest {
             ExtentManager.createTest("Verify Voice page loads as expected", "Smoke Test");
             try {
                 PgNavigation.clickVoiceLink(driver);
-                AcVoice.verifyVoiceServicesAndEquipmentHeader(driver);
-                AcVoice.verifyDevicesHeader(driver);
+                AcVoice.verifyVoiceServiceAndEquipmentHeader(driver);
+                AcVoice.verifyEquipmentHeader(driver);
             } catch (AssertionError | Exception e) {
                 //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
             }

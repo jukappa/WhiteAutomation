@@ -4,14 +4,14 @@ public class AcInternetTroubleshooting {
 
     //verify modem reset modal
     public static void verifyModemResetModal(WebDriver driver) {
-        FindElement.waitForElementXpath(driver, "//h2[text() = 'Modem Reset']", "Internet Troubleshooting - modem Reset modal");
+        FindElement.waitForElementXpath(driver, "//h1[text() = 'Resetting Your Equipment...']", "Internet Troubleshooting - modem Reset modal");
     }
 
     //Waits until the modem reset modal is removed/completed
     public static void waitForModemResetCompletion(WebDriver driver) {
 
         for (int i = 0; i < 100; i++) {
-            boolean modalPresent = Common.ElementVisible(driver, "//h2[text() = 'Modem Reset']", 1);
+            boolean modalPresent = Common.ElementVisible(driver, "//h1[text() = 'Resetting Your Equipment...']", 1);
             if (!modalPresent) {
                 break;
             }

@@ -24,15 +24,15 @@ public class AcDeviceInfo {
 
     //verify product specifications match expected
     public static void verifyProductSpecifications(WebDriver driver, String expectedManufacturer, String expectedModel ) {
-        String actualManufacturer = FindElement.waitForElementXpath(driver,"//span[text() = 'Manufacturer']/following-sibling::span","Specifications Manufacturer Section").getText();
-        String actualModel = FindElement.waitForElementXpath(driver,"//span[text() = 'Model']/following-sibling::span","Specifications Model Section").getText();
+        String actualManufacturer = FindElement.waitForElementXpath(driver,"//div[text() = 'Manufacturer']/following-sibling::span","Specifications Manufacturer Section").getText();
+        String actualModel = FindElement.waitForElementXpath(driver,"//div[text() = 'Model']/following-sibling::span","Specifications Model Section").getText();
 
         Comparison.verifyStringMatch(expectedManufacturer,actualManufacturer);
         Comparison.verifyStringMatch(expectedModel,actualModel);
     }
     //verify device image present
     public static void verifyDeviceImagePresence(WebDriver driver) {
-        FindElement.waitForElementXpath(driver,"//ul[@class = 'device-images list-unstyled list-inline']//img","Device Image");
+        FindElement.waitForElementXpath(driver,"//spectrum-gallery//div[contains(@class,'gallery-thumbnail-letterbox')]//img","Device Image");
     }
 
 

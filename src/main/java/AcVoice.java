@@ -2,13 +2,13 @@ import org.openqa.selenium.WebDriver;
 
 public class AcVoice {
 
-    //verify voice services and equipment header
-    public static void verifyVoiceServicesAndEquipmentHeader(WebDriver driver) {
-        FindElement.waitForElementXpath(driver,"//h1[@id = 'pageTitle'][text() = 'Voice Services & Equipment']","Voice page - Voice Services & Equipment Header");
+    //verify voice service and equipment header
+    public static void verifyVoiceServiceAndEquipmentHeader(WebDriver driver) {
+        FindElement.waitForElementXpath(driver,"//h1[text() = 'Voice Service & Equipment']","Voice page - Voice Service & Equipment Header");
     }
 
-    //verify devices header
-    public static void verifyDevicesHeader(WebDriver driver) {
-        FindElement.waitForElementXpath(driver,"//h1[@class = 'section-heading'][contains(text() , 'Devices')]","Voice page - Devices Header");
+    //verify Equipment header
+    public static void verifyEquipmentHeader(WebDriver driver) {
+        FindElement.waitForElementXpath(driver,"//h2[contains(text() ,'Equipment')]","Voice page - Equipment Header");
     }
 }

@@ -5,15 +5,15 @@ import org.openqa.selenium.WebElement;
 public class PgInternet {
 
 
-    public static void clickDeviceBasedOnRowNumber(WebDriver driver, String rowNum) {
-        WebElement element = FindElement.waitForElementXpath(driver,"//ul[contains(@class , 'device-list-detailed')]//span[text() = 'View Device Info']["+rowNum+"]","Internet page device");
+    public static void clickEquipmentBasedOnRowNumber(WebDriver driver, String rowNum) {
+        WebElement element = FindElement.waitForElementXpath(driver,"(//spectrum-dynamic-collapse-card/div)["+rowNum+"]","Internet page equipment");
         element.click();
-        ExtentManager.stepReport(Status.INFO,"Internet Device on row "+rowNum+" clicked successfully");
+        ExtentManager.stepReport(Status.INFO,"Internet Equipment on row "+rowNum+" clicked successfully");
 
     }
 
     public static void clickTroubleShootButton(WebDriver driver) {
-        WebElement element = FindElement.waitForElementXpath(driver,"//a[text() = 'Troubleshoot']","Internet page Trouble shoot button");
+        WebElement element = FindElement.waitForElementXpath(driver,"(//button[text() = 'Troubleshoot'])[2]","Internet page Trouble shoot button");
         element.click();
         ExtentManager.stepReport(Status.INFO,"Troubleshoot button clicked successfully");
 
