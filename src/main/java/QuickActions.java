@@ -40,6 +40,7 @@ public class QuickActions {
         String URL = driver.getCurrentUrl();
         if (URL.contains("cpni-roadblock")) {
             FindElement.waitForElementID(driver, "equipmentId", "Enter Mac Field").sendKeys(last4MacDigits);
+            Common.sleep(1000);
             FindElement.waitForElementXpath(driver, "//button[@type = 'submit']", "verify Account Continue button").click();
         }
     }

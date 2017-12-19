@@ -19,8 +19,7 @@ public class AcInternet {
 
     //verify Go to Security suite link
     public static void verifyGotoSecuritySuiteLink(WebDriver driver) {
-        FindElement.waitForElementXpath(driver,"(//button[text() = 'Go to Security Suite\n" +
-                "                    '])[1]","Internet page - Go to Security Suite");
+        FindElement.waitForElementXpath(driver,"(//span[text() = 'Go to Security Suite'])[1]","Internet page - Go to Security Suite");
     }
 
     //verify internet status header

@@ -1,3 +1,4 @@
+import com.aventstack.extentreports.Status;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
@@ -57,6 +58,7 @@ public class SmokeTest extends BaseTest {
         //Account must have internet device
         String userName = "sstest01";
         String passWord = "Testing01";
+        String passWord2 = "Testing01";
         String last4Mac = "B52A";
         String zipCode = "59102";
         String https = "https://";
@@ -78,8 +80,8 @@ public class SmokeTest extends BaseTest {
                 AcAskSpectrum.verifyAskSpectrumWelcomeMessage(driver);
                 PgAskSpectrum.clickSpectrumXButton(driver);
                 PgAskSpectrum.clickSpectrumCloseButton(driver);
-            } catch (AssertionError a) {
-                //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
+            } catch (AssertionError | Exception e){
+                ExtentManager.stepReport(Status.FAIL, String.valueOf(e));
             }
 
             //create user name links
@@ -94,6 +96,7 @@ public class SmokeTest extends BaseTest {
                 AcCreateUserName.verifyCreateUsernameTitle(driver);
                 driver.navigate().back();
             } catch (AssertionError | Exception e) {
+                ExtentManager.stepReport(Status.FAIL, String.valueOf(e));
                 PgNavigation.clickSpectrumHeader(driver);
             }
 
@@ -103,6 +106,7 @@ public class SmokeTest extends BaseTest {
                 PgLanding.clickForgotUserNameOrPassword(driver);
                 AcForgotUsernamePassword.verifyGetUsernameOrPassword(driver);
             } catch (AssertionError | Exception e) {
+                ExtentManager.stepReport(Status.FAIL, String.valueOf(e));
                 PgNavigation.clickSpectrumHeader(driver);
                 PgLanding.clickForgotUserNameOrPassword(driver);
             }
@@ -114,6 +118,7 @@ public class SmokeTest extends BaseTest {
                 AcGetUsername.verifyGetUsernameTitle(driver);
                 driver.navigate().to(https+baseURL+"/forgot");
             } catch (AssertionError | Exception e) {
+                ExtentManager.stepReport(Status.FAIL, String.valueOf(e));
                 PgNavigation.clickSpectrumHeader(driver);
                 PgLanding.clickForgotUserNameOrPassword(driver);
             }
@@ -125,6 +130,7 @@ public class SmokeTest extends BaseTest {
                 AcGetPassword.verifyGetPasswordTitle(driver);
                 driver.navigate().to(https+baseURL+"/forgot");
             } catch (AssertionError | Exception e) {
+                ExtentManager.stepReport(Status.FAIL, String.valueOf(e));
                 PgNavigation.clickSpectrumHeader(driver);
                 PgLanding.clickForgotUserNameOrPassword(driver);
             }
@@ -137,6 +143,7 @@ public class SmokeTest extends BaseTest {
                 PgNavigation.clickSpectrumHeader(driver);
 
             } catch (AssertionError | Exception e) {
+                ExtentManager.stepReport(Status.FAIL, String.valueOf(e));
                 PgNavigation.clickSpectrumHeader(driver);
             }
 
@@ -154,8 +161,8 @@ public class SmokeTest extends BaseTest {
                 PgNavigation.clickAccountSummaryLink(driver);
                 AcAccountSummary.verifyBillingHeader(driver);
                 AcAccountSummary.ensureWhatsNewPopUpClosed(driver);
-            } catch (AssertionError a) {
-                //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
+            } catch (AssertionError | Exception e) {
+                ExtentManager.stepReport(Status.FAIL, String.valueOf(e));
             }
 
             //Your Services and Equipment
@@ -165,7 +172,7 @@ public class SmokeTest extends BaseTest {
                 AcAccountSummary.verifyServiceAndEquipmentInternetIcon(driver);
                 AcAccountSummary.verifyServiceAndEquipmentVoiceIcon(driver);
             } catch (AssertionError | Exception e) {
-                //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
+                ExtentManager.stepReport(Status.FAIL, String.valueOf(e));
             }
 
             //Your Services and Equipment links
@@ -184,7 +191,7 @@ public class SmokeTest extends BaseTest {
                 AcVoice.verifyVoiceServiceAndEquipmentHeader(driver);
 
             } catch (AssertionError | Exception e) {
-                //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
+                ExtentManager.stepReport(Status.FAIL, String.valueOf(e));
             }
 
             //Billing
@@ -193,11 +200,10 @@ public class SmokeTest extends BaseTest {
                 PgNavigation.clickBillingLink(driver);
                 AcAccountSummary.ensureWhatsNewPopUpClosed(driver);
                 AcBilling.makeAPaymentHeader(driver);
-                AcBilling.manageScheduledPaymentsHeader(driver);
                 AcBilling.manageAutopayHeader(driver);
                 AcBilling.verifyViewBillingStatementHeader(driver);
             } catch (AssertionError | Exception e) {
-                //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
+                ExtentManager.stepReport(Status.FAIL, String.valueOf(e));
             }
 
             //TV
@@ -207,7 +213,7 @@ public class SmokeTest extends BaseTest {
                 AcTV.verifyTVServicesAndEquipmentHeader(driver);
                 AcTV.verifyEquipmentHeader(driver);
             } catch (AssertionError | Exception e) {
-                //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
+                ExtentManager.stepReport(Status.FAIL, String.valueOf(e));
             }
 
             //Internet
@@ -217,6 +223,7 @@ public class SmokeTest extends BaseTest {
                 AcInternet.verifyInternetServicesAndEquipmentHeader(driver);
                 AcInternet.verifyDevicesHeader(driver);
             } catch (AssertionError | Exception e) {
+                ExtentManager.stepReport(Status.FAIL, String.valueOf(e));
                 Common.sleep(5000);
             }
 
@@ -225,6 +232,7 @@ public class SmokeTest extends BaseTest {
                 AcInternet.verifyCheckEmailLink(driver);
                 AcInternet.verifyGotoSecuritySuiteLink(driver);
             } catch (AssertionError | Exception e) {
+                ExtentManager.stepReport(Status.FAIL, String.valueOf(e));
                 Common.sleep(5000);
             }
 
@@ -233,6 +241,7 @@ public class SmokeTest extends BaseTest {
                 AcInternet.verifyInternetStatusHeader(driver, "Connected");
                 AcInternet.verifyTroubleShootButton(driver);
             } catch (AssertionError | Exception e) {
+                ExtentManager.stepReport(Status.FAIL, String.valueOf(e));
                 Common.sleep(5000);
             }
             try {
@@ -243,9 +252,10 @@ public class SmokeTest extends BaseTest {
                 //Support modified and seems incomplete in engnew 3.55.0
                 //AcDeviceInfo.verifySpecificationsTitle(driver);
                 //AcDeviceInfo.verifySupportTitle(driver);
-                AcDeviceInfo.verifySupportLinkPresent(driver);
+                AcDeviceInfo.verifyDeviceSupportLinkPresent(driver);
                 PgNavigation.clickInternetLink(driver);
             } catch (AssertionError | Exception e) {
+                ExtentManager.stepReport(Status.FAIL, String.valueOf(e));
                 PgNavigation.clickInternetLink(driver);
             }
 
@@ -264,6 +274,7 @@ public class SmokeTest extends BaseTest {
                 AcInternet.verifyInternetServicesAndEquipmentHeader(driver);
 
             } catch (AssertionError | Exception e) {
+                ExtentManager.stepReport(Status.FAIL, String.valueOf(e));
                 PgInternet.closeModemResetModalIfPresent(driver);
                 driver.navigate().to(https + baseURL);
 
@@ -275,7 +286,8 @@ public class SmokeTest extends BaseTest {
                 AcVoice.verifyVoiceServiceAndEquipmentHeader(driver);
                 AcVoice.verifyEquipmentHeader(driver);
             } catch (AssertionError | Exception e) {
-                //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
+                ExtentManager.stepReport(Status.FAIL, String.valueOf(e));
+
             }
 
             //Settings
@@ -285,7 +297,8 @@ public class SmokeTest extends BaseTest {
                 AcSettings.verifySettingsHeader(driver);
                 AcSettings.verifyContactInfoHeader(driver);
             } catch (AssertionError | Exception e) {
-                //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
+                ExtentManager.stepReport(Status.FAIL, String.valueOf(e));
+
             }
 
             //Ask Spectrum
@@ -316,7 +329,7 @@ public class SmokeTest extends BaseTest {
 
 
             } catch (AssertionError | Exception e) {
-                //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
+                ExtentManager.stepReport(Status.FAIL, String.valueOf(e));
             }
 
             //mail
@@ -324,10 +337,10 @@ public class SmokeTest extends BaseTest {
             try {
                 PgNavigation.clickmailLink(driver);
                 String mailURL = driver.getCurrentUrl();
-                Comparison.verifyStringMatch("https://www.spectrum.net.*mail.*", mailURL);
+                Comparison.verifyStringMatch("https://mail2.(engprod|engnew)-spectrum.net.*", mailURL);
                 driver.navigate().to(https+baseURL);
             } catch (AssertionError | Exception e) {
-                //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
+                ExtentManager.stepReport(Status.FAIL, String.valueOf(e));
             }
 
             //Voice online manager
@@ -338,7 +351,7 @@ public class SmokeTest extends BaseTest {
                 Comparison.verifyStringMatch("https://www.(engprod|engnew)-spectrum.net/voice/", voiceURL);
                 driver.navigate().to(https+baseURL);
             } catch (AssertionError | Exception e) {
-                //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
+                ExtentManager.stepReport(Status.FAIL, String.valueOf(e));
             }
 
             //Support
@@ -348,7 +361,7 @@ public class SmokeTest extends BaseTest {
                 String supportURL = driver.getCurrentUrl();
                 Comparison.verifyStringMatch("https://www.(engnew|engprod)-spectrum.net/support/", supportURL);
             } catch (AssertionError | Exception e) {
-                //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
+                ExtentManager.stepReport(Status.FAIL, String.valueOf(e));
             }
 
             //sign out
@@ -357,7 +370,7 @@ public class SmokeTest extends BaseTest {
                 PgNavigation.clickSignOutLink(driver);
                 AcLanding.verifySignInToGetStartedSection(driver);
             } catch (AssertionError | Exception e) {
-                //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
+                ExtentManager.stepReport(Status.FAIL, String.valueOf(e));
             }
 
             //Verify Search works as expected
@@ -369,21 +382,21 @@ public class SmokeTest extends BaseTest {
                 Common.sleep(2000);
                 AcSearchResults.verifySpectrumResultsHeader(driver, FALSE);
             } catch (AssertionError | Exception e) {
-                //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
+                ExtentManager.stepReport(Status.FAIL, String.valueOf(e));
             }
 
             //Verify if TV, Internet or Voice service is not included, upgrade link is present and directs to upgrade flow
             ExtentManager.createTest("Verify if TV, Internet or Voice service is not included, upgrade link is present and directs to upgrade flow", "Smoke Test");
             try {
                 PgNavigation.clickSpectrumHeader(driver);
-                QuickActions.login(driver, accountWithUpgradeLinks, passWord, browser);
+                QuickActions.login(driver, accountWithUpgradeLinks, passWord2, browser);
                 AcAccountSummary.waitForNoBillLoadingSpinner(driver);
                 AcAccountSummary.ensureWhatsNewPopUpClosed(driver);
                 PgAccountSummary.clickFirstAddServiceButton(driver);
                 String URL = driver.getCurrentUrl();
                 Comparison.verifyStringMatch(".*ispectrum.com/buyflow.*", URL);
             } catch (AssertionError | Exception e) {
-                //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
+                ExtentManager.stepReport(Status.FAIL, String.valueOf(e));
             }
         }
     }

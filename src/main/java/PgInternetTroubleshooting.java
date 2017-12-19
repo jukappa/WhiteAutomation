@@ -13,7 +13,7 @@ public class PgInternetTroubleshooting {
     }
 
     public static void clickModalIssueResolvedButton(WebDriver driver) {
-        FindElement.waitForElementXpath(driver, "//a[@class = 'btn primary-btn btn-lrg'][text() = 'Issue Resolved ']", "Internet Troubleshooting reset modem - Issue Resolved button").click();
+        FindElement.waitForElementXpath(driver, "//button[@class = 'kite-button primary lg'][text() = 'Issue Resolved']", "Internet Troubleshooting reset modem - Issue Resolved button").click();
         ExtentManager.stepReport(Status.INFO,"Issue Resolved button clicked successfully");
     }
 

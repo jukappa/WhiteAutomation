@@ -8,6 +8,8 @@ public class PgMenu {
     public static void clickTopMenuButton(WebDriver driver) {
         WebElement element = FindElement.waitForElementXpath(driver,"//*[contains(@class, 'hamburger')]","Top left nav menu button");
         element.click();
+        //allow time for menu to expand fully
+        Common.sleep(1000);
         ExtentManager.stepReport(Status.INFO,"menu button was clicked");
 
     }

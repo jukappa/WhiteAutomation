@@ -18,8 +18,8 @@ public class AcDeviceInfo {
     }
 
     //verify Support Link
-    public static void verifySupportLinkPresent(WebDriver driver) {
-        FindElement.waitForElementXpath(driver,"//h3//div[text() = 'Support']/ancestor::h3//following-sibling::div//a","Support Link");
+    public static void verifyDeviceSupportLinkPresent(WebDriver driver) {
+        FindElement.waitForElementXpath(driver,"//button[text() = 'Get Device Support Info']","Device Support Link");
     }
 
     //verify product specifications match expected
