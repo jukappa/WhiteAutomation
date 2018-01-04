@@ -40,7 +40,7 @@ public class SmokeTest extends BaseTest {
     * */
 
     //Scenario not automated
-    /*
+    /*/
     Verify when creating a new username email comes from a "spectrum.net" account
     */
 
