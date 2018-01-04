@@ -56,7 +56,7 @@ public class PgNavigation {
     }
     //Clicks the mail icon button
     public static void clickmailLink(WebDriver driver) {
-        String linkXpath = "//span[@class = 'mat-button-wrapper']//*[contains(@class ,'email-icon')]";
+        String linkXpath = "//span//mat-icon[contains(@class ,'email-icon')]";
         FindElement.waitForElementXpath(driver,linkXpath,"mail icon link").click();
         ExtentManager.stepReport(Status.PASS, "mail icon link clicked successfully");
     }
@@ -68,21 +68,21 @@ public class PgNavigation {
     }
     //Clicks Support link
     public static void clickSupportLink(WebDriver driver) {
-        String linkXpath = "//span[@class = 'mat-button-wrapper']//span[text() = 'Support']";
+        String linkXpath = "//span[contains(text() ,'Support')]";
         FindElement.waitForElementXpath(driver,linkXpath,"Support link").click();
         ExtentManager.stepReport(Status.PASS, "Support link clicked successfully");
     }
 
     //Clicks Sign out Link
     public static void clickSignOutLink(WebDriver driver) {
-        String linkXpath = "//span[@class = 'mat-button-wrapper']//span[text() = 'Sign Out']";
+        String linkXpath = "//span[text() = 'Sign Out']";
         FindElement.waitForElementXpath(driver,linkXpath,"Support link").click();
         ExtentManager.stepReport(Status.PASS, "Sign out link clicked successfully");
     }
 
     //Clicks Search button icon
     public static void clickSearchButtonIcon(WebDriver driver) {
-        String linkXpath = "//button[@class='search-button icon-button']//mat-icon";
+        String linkXpath = "//button//mat-icon[@aria-label= 'Search']";
         FindElement.waitForElementXpath(driver,linkXpath,"Search button icon").click();
         ExtentManager.stepReport(Status.PASS, "Search button icon clicked successfully");
     }

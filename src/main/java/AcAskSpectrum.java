@@ -31,4 +31,39 @@ public class AcAskSpectrum {
             return FindElement.waitForElementID(driver, "//button[@class = 'search icon-button large']//md-icon[contains(@class, 'search-icon')]", "Search magnifying glass icon").getLocation().getY();
         }
     }
+
+    //verify chat bubble icon
+    public static void verifyChatIcon(WebDriver driver) {
+       FindElement.waitForElementXpath(driver,"//div[@id = 'almeDescribeHeader']//span[@class = 'alme__chat__bubble--bottom-outline']","IVA chat bubble icon");
+    }
+
+    //verify ask spectrum IVA header
+    public static void verifyAskSpectrumHeader(WebDriver driver) {
+        FindElement.waitForElementXpath(driver,"//div[@id = 'almeDescribeHeader']//span[text() = 'Ask Spectrum']","IVA chat bubble icon");
+    }
+
+    //verify ask spectrum sound icon
+    public static void verifySoundIcon(WebDriver driver) {
+        FindElement.waitForElementXpath(driver,"//div[@id = 'alme-header']//button[@id = 'alme-sound-off']","Ask spectrum IVA sound icon");
+    }
+
+    //verify ask spectrum contract button
+    public static void verifyContractButton(WebDriver driver) {
+        FindElement.waitForElementXpath(driver,"//div[@id = 'alme-header']//button[@id = 'alme-contract-button']","Ask spectrum IVA contract button");
+    }
+
+    //verify ask spectrum close button
+    public static void verifyCloseButton(WebDriver driver) {
+        FindElement.waitForElementXpath(driver,"//div[@id = 'alme-header']//button[@id = 'alme-close-button']","Ask spectrum IVA close button");
+    }
+
+    //verify ask spectrum message field
+    public static void verifyMessageField(WebDriver driver) {
+        FindElement.waitForElementXpath(driver,"//input[@id = 'alme-input-field']","Ask spectrum IVA message field");
+    }
+
+    //verify ask spectrum send button
+    public static void verifySendButton(WebDriver driver) {
+        FindElement.waitForElementXpath(driver,"//input[@id = 'alme-input-button']","Ask spectrum IVA message field");
+    }
 }

@@ -26,7 +26,7 @@ public class FindElement {
                     ExtentManager.stepReport(Status.FAIL, description + " was not located - Stack Trace - " + e);
                     Assert.fail();
                 }
-                else{
+            else {
                 Common.sleep(2000);
             }
         }

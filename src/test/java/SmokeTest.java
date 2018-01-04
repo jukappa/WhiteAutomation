@@ -57,7 +57,7 @@ public class SmokeTest extends BaseTest {
 
         //Account must have internet device
         String userName = "sstest01";
-        String passWord = "Testing01";
+        String passWord = "Testing02";
         String passWord2 = "Testing01";
         String last4Mac = "B52A";
         String zipCode = "59102";
@@ -77,6 +77,7 @@ public class SmokeTest extends BaseTest {
             ExtentManager.createTest("Ask spectrum should be available for unauthenticated users", "Smoke Test");
             try {
                 PgAskSpectrum.clickAskSpectrumChatButton(driver);
+                //PgAskSpectrum.clickAskSpectrumChatButton(driver);
                 AcAskSpectrum.verifyAskSpectrumWelcomeMessage(driver);
                 PgAskSpectrum.clickSpectrumXButton(driver);
                 PgAskSpectrum.clickSpectrumCloseButton(driver);

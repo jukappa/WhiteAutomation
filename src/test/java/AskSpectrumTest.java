@@ -1,3 +1,4 @@
+import com.aventstack.extentreports.Status;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
@@ -7,9 +8,9 @@ public class AskSpectrumTest extends BaseTest {
 
     //-----------------Scenarios-------------------------\\
     /*
-    Verify Authenticated user can access IVA and Welcome message appears
-    Verify Un-authenticated user can access IVA and Welcome message appears
-    Verify when maximized, IVA has chat icon,header,sound button,resize button, close button, intro message, input field,send button
+    -Verify Authenticated user can access IVA and Welcome message appears
+    -Verify Un-authenticated user can access IVA and Welcome message appears
+    -Verify when maximized, IVA has chat icon,header,sound button,resize button, close button, intro message, input field,send button
     Verify when reduced, IVA has chat icon,header,sound button,resize button,minimize button, close button, intro message, input field,send button
     Verify IVA can be maximized, reduced, minimized, closed
     Verify Sound icon changes on/off when clicked
@@ -54,7 +55,7 @@ public class AskSpectrumTest extends BaseTest {
         String[] browsers = {"chrome"};
 
         //Account must have internet device
-        String userName = "sstest01";
+        String userName = "sstest02";
         String passWord = "Testing01";
         String last4Mac = "B52A";
         String zipCode = "59102";
@@ -70,15 +71,42 @@ public class AskSpectrumTest extends BaseTest {
             driver.get(https + baseURL);
 
             //Ask Spectrum unauthenticated user
-            ExtentManager.createTest("Ask spectrum should be available for unauthenticated users", "Smoke Test");
+            ExtentManager.createTest("Verify Un-authenticated user can access IVA and Welcome message appears", "Ask Spectrum");
             try {
                 PgAskSpectrum.clickAskSpectrumChatButton(driver);
                 AcAskSpectrum.verifyAskSpectrumWelcomeMessage(driver);
                 PgAskSpectrum.clickSpectrumXButton(driver);
                 PgAskSpectrum.clickSpectrumCloseButton(driver);
-            } catch (AssertionError a) {
-                //failure reporting is performed in 'try' method above, this try catch block simply prevents test from stopping on fail.
+            } catch (AssertionError | Exception e) {
+                ExtentManager.stepReport(Status.FAIL, String.valueOf(e));
             }
+
+            ExtentManager.createTest("Sign in", "Ask Spectrum");
+            QuickActions.firstTimeLogin(driver, userName, passWord, browser);
+            AcAccountSummary.waitForNoBillLoadingSpinner(driver);
+            AcAccountSummary.ensureWhatsNewPopUpClosed(driver);
+            //ensure CPNI compliant
+            PgNavigation.clickVoiceLink(driver);
+            QuickActions.ensureCPNICompliant(driver,last4Mac);
+
+            //Ask Spectrum authenticated user
+            ExtentManager.createTest("Verify authenticated user can access IVA and Welcome message appears", "Ask Spectrum");
+            try {
+                PgAskSpectrum.clickAskSpectrumChatButton(driver);
+                AcAskSpectrum.verifyAskSpectrumWelcomeMessage(driver);
+            } catch (AssertionError | Exception e) {
+                ExtentManager.stepReport(Status.FAIL, String.valueOf(e));
+            }
+
+            ExtentManager.createTest("Verify when maximized, IVA has chat icon,header,sound button,resize button, close button, intro message, input field,send button", "Ask Spectrum");
+            AcAskSpectrum.verifyChatIcon(driver);
+            AcAskSpectrum.verifyAskSpectrumHeader(driver);
+            AcAskSpectrum.verifySoundIcon(driver);
+            AcAskSpectrum.verifyContractButton(driver);
+            AcAskSpectrum.verifyCloseButton(driver);
+            AcAskSpectrum.verifyAskSpectrumWelcomeMessage(driver);
+            AcAskSpectrum.verifyMessageField(driver);
+            AcAskSpectrum.verifySendButton(driver);
         }
     }
 }
