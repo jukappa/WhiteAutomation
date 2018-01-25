@@ -29,7 +29,7 @@ public class PgForgotUsernamePassword {
 
         driver.navigate().refresh();
         String URL = driver.getCurrentUrl();
-        if (URL.matches("https://www.(engprod|engnew)-spectrum.net/unauthenticated-routing.*")){
+        if (URL.matches("https://www.(engprod|engnew|stage)-spectrum.net/unauthenticated-routing.*")){
             String zipFieldID = "zipcode";
             FindElement.waitForElementID(driver,zipFieldID,"Service zip code field").sendKeys(zipCode);
             PgForgotUsernamePassword.clickContinueButton(driver);

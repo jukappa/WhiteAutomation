@@ -57,14 +57,15 @@ public class SmokeTest extends BaseTest {
 
         //Account must have internet device
         String userName = "sstest01";
+        String accountWithUpgradeLinks = "billpaytest05";
         String passWord = "Testing02";
         String passWord2 = "Testing01";
         String last4Mac = "B52A";
         String zipCode = "59102";
         String https = "https://";
         String securityPreText = "charternet:Chart3rn3t@";
-        String baseURL = "www.engnew-spectrum.net";
-        String accountWithUpgradeLinks = "billpaytest01";
+        String baseURL = "www.stage-spectrum.net";
+
         for (String browser : browsers) {
             ExtentManager.createTest(browser + " login", "Smoke Test");
             WebDriver driver = PreTest.getBrowserDrivers(browser);
@@ -338,7 +339,7 @@ public class SmokeTest extends BaseTest {
             try {
                 PgNavigation.clickmailLink(driver);
                 String mailURL = driver.getCurrentUrl();
-                Comparison.verifyStringMatch("https://mail2.(engprod|engnew)-spectrum.net.*", mailURL);
+                Comparison.verifyStringMatch("https://mail2.(engprod|engnew|stage)-spectrum.net.*", mailURL);
                 driver.navigate().to(https+baseURL);
             } catch (AssertionError | Exception e) {
                 ExtentManager.stepReport(Status.FAIL, String.valueOf(e));
@@ -349,7 +350,7 @@ public class SmokeTest extends BaseTest {
             try {
                 PgNavigation.clickVoiceOnlineManagerLink(driver);
                 String voiceURL = driver.getCurrentUrl();
-                Comparison.verifyStringMatch("https://www.(engprod|engnew)-spectrum.net/voice/", voiceURL);
+                Comparison.verifyStringMatch("https://www.(engprod|engnew|stage)-spectrum.net/voice/", voiceURL);
                 driver.navigate().to(https+baseURL);
             } catch (AssertionError | Exception e) {
                 ExtentManager.stepReport(Status.FAIL, String.valueOf(e));
@@ -360,7 +361,7 @@ public class SmokeTest extends BaseTest {
             try {
                 PgNavigation.clickSupportLink(driver);
                 String supportURL = driver.getCurrentUrl();
-                Comparison.verifyStringMatch("https://www.(engnew|engprod)-spectrum.net/support/", supportURL);
+                Comparison.verifyStringMatch("https://www.(engnew|engprod|stage)-spectrum.net/support/", supportURL);
             } catch (AssertionError | Exception e) {
                 ExtentManager.stepReport(Status.FAIL, String.valueOf(e));
             }

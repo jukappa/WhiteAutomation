@@ -91,6 +91,9 @@ public class Common {
                     Common.sleep(250);
                     flag = TRUE;
                     i++;
+                } else{
+                    Common.sleep(250);
+                    i++;
                 }
 
             }
