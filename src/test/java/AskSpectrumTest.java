@@ -60,6 +60,7 @@ public class AskSpectrumTest extends BaseTest {
         String last4Mac = "B52A";
         String zipCode = "59102";
         String https = "https://";
+        String environment = "ENGNEW";
         String securityPreText = "charternet:Chart3rn3t@";
         String baseURL = "www.engnew-spectrum.net";
         String accountWithUpgradeLinks = "billpaytest01";
@@ -82,7 +83,7 @@ public class AskSpectrumTest extends BaseTest {
             }
 
             ExtentManager.createTest("Sign in", "Ask Spectrum");
-            QuickActions.firstTimeLogin(driver, userName, passWord, browser);
+            QuickActions.firstTimeLogin(driver, userName, passWord, browser,environment);
             AcAccountSummary.waitForNoBillLoadingSpinner(driver);
             AcAccountSummary.ensureWhatsNewPopUpClosed(driver);
             //ensure CPNI compliant

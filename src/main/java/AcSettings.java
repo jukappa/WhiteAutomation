@@ -11,4 +11,5 @@ public class AcSettings {
     public static void verifyContactInfoHeader(WebDriver driver) {
         FindElement.waitForElementXpath(driver,"//cc-section[@id = 'contact-info']//div[text() = 'Contact Info']","Settings page - Contact Info Header");
     }
+
 }

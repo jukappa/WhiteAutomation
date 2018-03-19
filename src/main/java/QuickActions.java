@@ -7,26 +7,30 @@ import java.awt.event.KeyEvent;
 public class QuickActions {
 
     //Login method, Chrome seems to load slowly, adding a refresh helps load it a bit quicker
-    public static void firstTimeLogin(WebDriver driver, String userName, String passWord, String browser) throws AWTException {
+    public static void firstTimeLogin(WebDriver driver, String userName, String passWord, String browser, String environment) throws AWTException {
         PgLanding.enterUserName(driver, userName);
         PgLanding.enterPassword(driver, passWord);
         PgLanding.clickSignIn(driver);
-        if (browser.toUpperCase().equals("CHROME")) {
-            Common.sleep(4000);
-            driver.navigate().refresh();
-            PgLanding.enterUserName(driver, userName);
-            PgLanding.enterPassword(driver, passWord);
-            PgLanding.clickSignIn(driver);
-            Common.sleep(1000);
-            Robot rob = new Robot();
-            rob.keyPress((KeyEvent.VK_ESCAPE));
-            rob.keyRelease((KeyEvent.VK_ESCAPE));
-            PgLanding.clickSignIn(driver);
-            rob.keyPress((KeyEvent.VK_ESCAPE));
-            rob.keyRelease((KeyEvent.VK_ESCAPE));
-        } else if (browser.toUpperCase().equals("IE")) {
-            Common.sleep(2000);
-            PgLanding.clickSignIn(driver);
+        if (environment.toUpperCase().equals("ENGNEW")) {
+        } else {
+            if (browser.toUpperCase().equals("CHROME")) {
+                Common.sleep(4000);
+                driver.navigate().refresh();
+                PgLanding.enterUserName(driver, userName);
+                PgLanding.enterPassword(driver, passWord);
+                PgLanding.clickSignIn(driver);
+                Common.sleep(1000);
+                Robot rob = new Robot();
+                rob.keyPress((KeyEvent.VK_ESCAPE));
+                rob.keyRelease((KeyEvent.VK_ESCAPE));
+                PgLanding.clickSignIn(driver);
+                rob.keyPress((KeyEvent.VK_ESCAPE));
+                rob.keyRelease((KeyEvent.VK_ESCAPE));
+            } else if (browser.toUpperCase().equals("IE")) {
+                Common.sleep(2000);
+                PgLanding.clickSignIn(driver);
+            }
+
         }
 
 

@@ -5,7 +5,7 @@ public class PgAskSpectrum {
 
     //click ask Spectrum chat button
     public static void clickAskSpectrumChatButton(WebDriver driver) {
-        FindElement.waitForElementXpath(driver,"//button[@class = 'ask-spectrum-button']","Ask Spectrum chat button").click();
+        FindElement.waitForElementXpath(driver,"//button[@ngclass = 'ask-spectrum-button']","Ask Spectrum chat button").click();
         ExtentManager.stepReport(Status.PASS,"Ask Spectrum button successfully clicked");
     }
 

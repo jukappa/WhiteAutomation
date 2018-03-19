@@ -17,6 +17,20 @@ public class Common {
         }
     }
 
+    //wait until and element is visible for x amount of seconds before continuing
+    public static void waitForElementVisibility(WebDriver driver, String xpath, int secondsToVerify) {
+
+        for (int i = 1; i < secondsToVerify;i++){
+
+            int elementVisible = driver.findElements(By.xpath(xpath)).size();
+            if (elementVisible < 1){
+                Common.sleep(1000);
+            }else{
+                break;
+            }
+        }
+    }
+
     //verify an element is not present, will wait x amount of seconds for element to not be present before failing
     public static void verifyElementNotPresent(WebDriver driver, String xpath, int secondsToVerify) {
 

@@ -6,7 +6,7 @@ import java.awt.*;
 
 import static java.lang.Boolean.FALSE;
 
-public class SmokeTest extends BaseTest {
+public class Voice_Equipment_Regression extends BaseTest {
 
     //Scenarios
     /*-Ask spectrum should be available for both un/authenticated users

@@ -6,7 +6,12 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.logging.LogType;
+import org.openqa.selenium.logging.LoggingPreferences;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+
+import java.util.logging.Level;
 
 public class PreTest {
     static ExtentTest test;
@@ -23,6 +28,9 @@ public class PreTest {
                 path = System.getenv("CHROME_DRIVER");
                 System.setProperty("webdriver.chrome.driver","./src//lib//chromedriver");
                 DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+                LoggingPreferences logPrefs = new LoggingPreferences();
+                logPrefs.enable(LogType.PERFORMANCE, Level.ALL);
+                capabilities.setCapability(CapabilityType.LOGGING_PREFS, logPrefs);
                 System.setProperty(name, path);
                 ChromeOptions options = new ChromeOptions();
                 options.addArguments("test-type");

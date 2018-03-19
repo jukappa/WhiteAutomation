@@ -34,7 +34,7 @@ public class AcAccountSummary {
 
     //Verify the TV Icon under your services and equipment
     public static void verifyServiceAndEquipmentTVIcon(WebDriver driver) {
-        FindElement.waitForElementXpath(driver,"//a[@class = 'service-icon']//img[@class = 'tv-image']","Tv icon");
+        FindElement.waitForElementXpath(driver,"//img[@class = 'tv-image']","Tv icon");
     }
 
     //Verify the Internet and Wifi Icon under your services and equipment

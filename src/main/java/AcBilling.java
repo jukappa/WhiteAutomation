@@ -1,3 +1,4 @@
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class AcBilling {
@@ -30,4 +31,12 @@ public class AcBilling {
     public static void manageAutopayHeader(WebDriver driver) {
         FindElement.waitForElementXpath(driver,"//button/*[contains(text(),'Manage Auto')]","Billing page - Manage autopay Header");
     }
-}
+    //Verify the Manage autopay/enroll in autopay title is on page
+    public static void verifyAutopayHeader(WebDriver driver) {
+        int manage = driver.findElements(By.xpath("//button/*[contains(text(),'Manage Auto')]")).size();
+            if (manage>0){
+                FindElement.waitForElementXpath(driver,"//button/*[contains(text(),'Manage Auto')]","Billing page - Manage autopay Header");
+            }else{
+                FindElement.waitForElementXpath(driver,"//button/*[contains(text(),'Enroll in')]","Billing page - Enroll in autopay Header");
+            }
+}}
