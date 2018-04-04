@@ -11,6 +11,7 @@ public class PgTV {
 
         //Wait till text is present before clicking trouble shoot button. (modal will not appear if clicked too soon)
         for (int i = 1; i < 15;i++) {
+            Common.sleep(500);
             String troubleshootTextXpath = "//p[@class = 'connection-description ng-star-inserted']";
             String text = driver.findElement(By.xpath(troubleshootTextXpath)).getText();
             int count = text.length();
@@ -37,6 +38,7 @@ public class PgTV {
 
     //refresh modal cancel button
     public static void clickRefreshModalRefreshButton(WebDriver driver) {
+        Common.sleep(500);
         WebElement element = FindElement.waitForElementXpath(driver,"//button[text() = 'Refresh All Equipment']","TV page refresh modal Refresh all equipment button");
         element.click();
         ExtentManager.stepReport(Status.INFO,"refresh modal refresh all equipment button clicked successfully");

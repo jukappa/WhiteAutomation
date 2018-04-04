@@ -3,6 +3,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class AcAccountSummary {
 
@@ -16,7 +17,9 @@ public class AcAccountSummary {
 
         (new WebDriverWait(driver, 40))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class = 'loading-overlay hidden']")));
+
     }
+
 
     //ensures the Whats new pop up is closed if it appears.
     //This method will do nothing if the pop up never appears

@@ -26,7 +26,7 @@ public class PreTest {
                 name = "webdriver.chrome.driver";
                 //Gets value in environment variables(uses directory path to specific driver)
                 path = System.getenv("CHROME_DRIVER");
-                System.setProperty("webdriver.chrome.driver","./src//lib//chromedriver");
+                //System.setProperty("webdriver.chrome.driver","./src//lib//chromedriver");
                 DesiredCapabilities capabilities = DesiredCapabilities.chrome();
                 LoggingPreferences logPrefs = new LoggingPreferences();
                 logPrefs.enable(LogType.PERFORMANCE, Level.ALL);

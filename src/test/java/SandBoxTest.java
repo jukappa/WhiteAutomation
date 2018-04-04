@@ -101,4 +101,11 @@ public class SandBoxTest extends BaseTest {
         }
     }
 
+    @Test
+    public void test5() throws AWTException {
+        System.out.print("hello");
+
+
+    }
+
 }
