@@ -11,7 +11,7 @@ public class QuickActions {
         PgLanding.enterUserName(driver, userName);
         PgLanding.enterPassword(driver, passWord);
         PgLanding.clickSignIn(driver);
-        if (environment.toUpperCase().equals("ENGNEW")) {
+        if (environment.toUpperCase().equals("ENGNEW")|environment.toUpperCase().equals("ENGPROD")) {
         } else {
             if (browser.toUpperCase().equals("CHROME")) {
                 Common.sleep(4000);
@@ -30,10 +30,7 @@ public class QuickActions {
                 Common.sleep(2000);
                 PgLanding.clickSignIn(driver);
             }
-
         }
-
-
     }
 
     //This method will ensure the verify account pop up is closed.  if pop up exists, mac is entered and continue clicked.
@@ -60,4 +57,10 @@ public class QuickActions {
         }
     }
 
+    //Login method, Chrome seems to load slowly, adding a refresh helps load it a bit quicker
+    public static void loginPageLogin(WebDriver driver, String userName, String passWord) throws AWTException {
+        PgLanding.enterUserName(driver, userName);
+        PgLanding.enterPassword(driver, passWord);
+        PgLanding.clickLoginPageSignIn(driver);
+    }
 }

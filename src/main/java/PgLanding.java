@@ -25,6 +25,11 @@ public class PgLanding{
         element.click();
         ExtentManager.stepReport(Status.INFO,"login sign in was clicked");
     }
+    public static void clickLoginPageSignIn(WebDriver driver) {
+        WebElement element = FindElement.waitForElementXpath(driver,"//input[@id = 'login-form-button']","Login page sign in button");
+        element.click();
+        ExtentManager.stepReport(Status.INFO,"login sign in was clicked");
+    }
     public static void clickCreateAUsernameButton(WebDriver driver) {
         WebElement element = FindElement.waitForElementXpath(driver,"//h2[text() = 'Sign In to Get Started']//following-sibling::a[contains(text(),'Create')]","Create a username button");
         element.click();

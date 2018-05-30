@@ -2,21 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a30afc4-8ddc-460b-bd66-98198f0cb521" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/TV_Equipment_Regression.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/TV_Equipment_Regression.java" afterPath="$PROJECT_DIR$/src/test/java/TV_Equipment_RegressionTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/AcAccountSummary.class" afterPath="$PROJECT_DIR$/target/classes/AcAccountSummary.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/ReserveCourt.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/AcTV.class" afterPath="$PROJECT_DIR$/target/classes/AcTV.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Common.class" afterPath="$PROJECT_DIR$/target/classes/Common.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/PgNavigation.class" afterPath="$PROJECT_DIR$/target/classes/PgNavigation.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/PgTV.class" afterPath="$PROJECT_DIR$/target/classes/PgTV.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/PreTest.class" afterPath="$PROJECT_DIR$/target/classes/PreTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/SandBoxTest.class" afterPath="$PROJECT_DIR$/target/test-classes/SandBoxTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/QuickActions.class" afterPath="$PROJECT_DIR$/target/classes/QuickActions.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/TV_Equipment_RegressionTest.class" afterPath="$PROJECT_DIR$/target/test-classes/TV_Equipment_RegressionTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extentreport.html" afterPath="$PROJECT_DIR$/extentreport.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/AcAccountSummary.java" afterPath="$PROJECT_DIR$/src/main/java/AcAccountSummary.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/PgNavigation.java" afterPath="$PROJECT_DIR$/src/main/java/PgNavigation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/AcTV.java" afterPath="$PROJECT_DIR$/src/main/java/AcTV.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Common.java" afterPath="$PROJECT_DIR$/src/main/java/Common.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/PgLanding.java" afterPath="$PROJECT_DIR$/src/main/java/PgLanding.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/PgTV.java" afterPath="$PROJECT_DIR$/src/main/java/PgTV.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/PreTest.java" afterPath="$PROJECT_DIR$/src/main/java/PreTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/SandBoxTest.java" afterPath="$PROJECT_DIR$/src/test/java/SandBoxTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/QuickActions.java" afterPath="$PROJECT_DIR$/src/main/java/QuickActions.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/TV_Equipment_RegressionTest.java" afterPath="$PROJECT_DIR$/src/test/java/TV_Equipment_RegressionTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -35,48 +35,50 @@
       <file leaf-file-name="TV_Equipment_RegressionTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/TV_Equipment_RegressionTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="113" column="59" lean-forward="true" selection-start-line="113" selection-start-column="59" selection-end-line="113" selection-end-column="59" />
+            <state relative-caret-position="294">
+              <caret line="60" column="22" lean-forward="false" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AcAccountSummary.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/AcAccountSummary.java">
+      <file leaf-file-name="QuickActions.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/QuickActions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="512">
+              <caret line="61" column="50" lean-forward="true" selection-start-line="61" selection-start-column="50" selection-end-line="61" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExtentManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ExtentManager.java">
+      <file leaf-file-name="PgLanding.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/PgLanding.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="469">
-              <caret line="43" column="47" lean-forward="false" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
+            <state relative-caret-position="373">
+              <caret line="28" column="116" lean-forward="false" selection-start-line="28" selection-start-column="116" selection-end-line="28" selection-end-column="116" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Common.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Common.java">
+      <file leaf-file-name="AcTV.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/AcTV.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="122" column="22" lean-forward="false" selection-start-line="122" selection-start-column="22" selection-end-line="122" selection-end-column="22" />
-              <folding />
+            <state relative-caret-position="562">
+              <caret line="53" column="5" lean-forward="false" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PgNavigation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/PgNavigation.java">
+      <file leaf-file-name="Comparison.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Comparison.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="31" column="23" lean-forward="false" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
+            <state relative-caret-position="252">
+              <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -85,18 +87,8 @@
       <file leaf-file-name="PgTV.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/PgTV.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="541">
-              <caret line="53" column="5" lean-forward="true" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FindElement.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/FindElement.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="13" column="29" lean-forward="false" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+            <state relative-caret-position="-672">
+              <caret line="31" column="46" lean-forward="false" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -122,6 +114,7 @@
       <find>false</find>
       <find>reset</find>
       <find>clickModalIssueResolvedButton</find>
+      <find>(//time[text() = '6:00'])[1]</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -135,9 +128,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/Utils/Common.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Utils/FindElement.java" />
-        <option value="$PROJECT_DIR$/src/main/java/PgOverview.java" />
         <option value="$PROJECT_DIR$/src/main/java/AcOverview.java" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ExtentManager.java" />
@@ -149,9 +139,7 @@
         <option value="$PROJECT_DIR$/src/main/java/AcGetUsernameOrPassword.java" />
         <option value="$PROJECT_DIR$/src/main/java/AcGetUsernameAndPassword.java" />
         <option value="/RegExp Fragment (AcSearchResults.java:379).regexp" />
-        <option value="$PROJECT_DIR$/src/main/java/Comparison.java" />
         <option value="$PROJECT_DIR$/src/main/java/PgAccountSummary.java" />
-        <option value="$PROJECT_DIR$/src/main/java/PgLanding.java" />
         <option value="$PROJECT_DIR$/src/main/java/AcVoice.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/AcInternet.java" />
@@ -168,7 +156,6 @@
         <option value="$PROJECT_DIR$/src/main/java/PgAskSpectrum.java" />
         <option value="$PROJECT_DIR$/src/test/java/AskSpectrumTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/AcBilling.java" />
-        <option value="$PROJECT_DIR$/src/main/java/QuickActions.java" />
         <option value="$PROJECT_DIR$/src/main/java/AcSettings.java" />
         <option value="$PROJECT_DIR$/src/test/java/SmokeTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/AcAskSpectrum.java" />
@@ -177,15 +164,21 @@
         <option value="$PROJECT_DIR$/src/test/java/Equipment_Regression.java" />
         <option value="$PROJECT_DIR$/src/test/java/Internet_Equipment_Regression.java" />
         <option value="$PROJECT_DIR$/src/test/java/Voice_Equipment_Regression.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Common.java" />
         <option value="$PROJECT_DIR$/src/main/java/AcTVTroubleShooting.java" />
-        <option value="$PROJECT_DIR$/src/main/java/AcTV.java" />
         <option value="$PROJECT_DIR$/src/main/java/PreTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/SandBoxTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/PgTV.java" />
         <option value="$PROJECT_DIR$/src/main/java/AcAccountSummary.java" />
-        <option value="$PROJECT_DIR$/src/main/java/PgNavigation.java" />
         <option value="$PROJECT_DIR$/src/test/java/TV_Equipment_Regression.java" />
+        <option value="$PROJECT_DIR$/src/main/java/PgNavigation.java" />
+        <option value="$USER_HOME$/Desktop/Internet.json" />
+        <option value="$PROJECT_DIR$/src/main/java/Common.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ReserveCourt.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Comparison.java" />
+        <option value="$PROJECT_DIR$/src/main/java/PgLanding.java" />
+        <option value="$PROJECT_DIR$/src/main/java/QuickActions.java" />
+        <option value="$PROJECT_DIR$/src/main/java/PgTV.java" />
+        <option value="$PROJECT_DIR$/src/main/java/AcTV.java" />
+        <option value="$PROJECT_DIR$/src/test/java/TV_Equipment_RegressionTest.java" />
       </list>
     </option>
   </component>
@@ -203,10 +196,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="250" />
-    <option name="y" value="-1085" />
-    <option name="width" value="1546" />
-    <option name="height" value="941" />
+    <option name="x" value="839" />
+    <option name="y" value="-656" />
+    <option name="width" value="322" />
+    <option name="height" value="173" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -224,6 +217,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -235,6 +229,25 @@
               <item name="WhiteAutomation" type="b2602c69:ProjectViewProjectNode" />
               <item name="WhiteAutomation" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WhiteAutomation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WhiteAutomation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WhiteAutomation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WhiteAutomation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WhiteAutomation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WhiteAutomation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="WhiteAutomation" type="b2602c69:ProjectViewProjectNode" />
@@ -253,10 +266,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -266,7 +278,7 @@
     <property name="create.test.in.the.same.root" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/java" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="TestNG" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Internet.json" />
     <property name="last.edited.regexp" value="" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
@@ -277,12 +289,12 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
       <recent name="Utils" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\user\IdeaProjects\seleniumPractice\src\test" />
@@ -303,16 +315,97 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="SandBoxTest.test5" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.TV_Equipment_RegressionTest.yourServiceCard">
+    <configuration name="ReserveCourt.smokeTest" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="WhiteAutomation" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SandBoxTest" />
-      <option name="METHOD_NAME" value="test5" />
+      <option name="MAIN_CLASS_NAME" value="ReserveCourt" />
+      <option name="METHOD_NAME" value="smokeTest" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="TV_Equipment_RegressionTest.equipmentCard (1)" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="WhiteAutomation" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TV_Equipment_RegressionTest" />
+      <option name="METHOD_NAME" value="equipmentCard" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" value="0" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="TV_Equipment_RegressionTest.equipmentCard" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="WhiteAutomation" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TV_Equipment_RegressionTest" />
+      <option name="METHOD_NAME" value="equipmentCard" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="TV_Equipment_RegressionTest.exploreSection" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="WhiteAutomation" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TV_Equipment_RegressionTest" />
+      <option name="METHOD_NAME" value="exploreSection" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -522,18 +615,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="TestNG.TV_Equipment_RegressionTest.yourServiceCard" />
-      <item index="1" class="java.lang.String" itemvalue="TestNG.TV_Equipment_RegressionTest.yourServiceCard" />
-      <item index="2" class="java.lang.String" itemvalue="TestNG.SandBoxTest.test5" />
-      <item index="3" class="java.lang.String" itemvalue="TestNG.TV_Equipment_RegressionTest.yourServiceCard" />
-      <item index="4" class="java.lang.String" itemvalue="TestNG.TV_Equipment_RegressionTest.yourServiceCard" />
+      <item index="1" class="java.lang.String" itemvalue="TestNG.TV_Equipment_RegressionTest.equipmentCard" />
+      <item index="2" class="java.lang.String" itemvalue="TestNG.TV_Equipment_RegressionTest.equipmentCard (1)" />
+      <item index="3" class="java.lang.String" itemvalue="TestNG.ReserveCourt.smokeTest" />
+      <item index="4" class="java.lang.String" itemvalue="TestNG.TV_Equipment_RegressionTest.exploreSection" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="TestNG.TV_Equipment_RegressionTest.yourServiceCard" />
-        <item index="1" class="java.lang.String" itemvalue="TestNG.TV_Equipment_RegressionTest.yourServiceCard" />
-        <item index="2" class="java.lang.String" itemvalue="TestNG.TV_Equipment_RegressionTest.yourServiceCard" />
-        <item index="3" class="java.lang.String" itemvalue="TestNG.SandBoxTest.test5" />
-        <item index="4" class="java.lang.String" itemvalue="TestNG.TV_Equipment_RegressionTest.yourServiceCard" />
+        <item index="1" class="java.lang.String" itemvalue="TestNG.TV_Equipment_RegressionTest.exploreSection" />
+        <item index="2" class="java.lang.String" itemvalue="TestNG.TV_Equipment_RegressionTest.equipmentCard" />
+        <item index="3" class="java.lang.String" itemvalue="TestNG.ReserveCourt.smokeTest" />
+        <item index="4" class="java.lang.String" itemvalue="TestNG.TV_Equipment_RegressionTest.equipmentCard (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -554,35 +647,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TV_Equipment_RegressionTest_yourServiceCard - 2018.04.04 at 14h 09m 02s.xml">
+    <history-entry file="TV_Equipment_RegressionTest_exploreSection - 2018.05.30 at 14h 18m 18s.xml">
+      <configuration name="TV_Equipment_RegressionTest.exploreSection" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="TV_Equipment_RegressionTest_exploreSection - 2018.05.30 at 14h 19m 59s.xml">
+      <configuration name="TV_Equipment_RegressionTest.exploreSection" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="TV_Equipment_RegressionTest_exploreSection - 2018.05.30 at 14h 24m 31s.xml">
+      <configuration name="TV_Equipment_RegressionTest.exploreSection" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="TV_Equipment_RegressionTest_exploreSection - 2018.05.30 at 14h 27m 00s.xml">
+      <configuration name="TV_Equipment_RegressionTest.exploreSection" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="TV_Equipment_RegressionTest_exploreSection - 2018.05.30 at 14h 33m 54s.xml">
+      <configuration name="TV_Equipment_RegressionTest.exploreSection" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="TV_Equipment_RegressionTest_exploreSection - 2018.05.30 at 14h 36m 44s.xml">
+      <configuration name="TV_Equipment_RegressionTest.exploreSection" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="TV_Equipment_RegressionTest_exploreSection - 2018.05.30 at 14h 39m 36s.xml">
+      <configuration name="TV_Equipment_RegressionTest.exploreSection" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="TV_Equipment_RegressionTest_yourServiceCard - 2018.05.30 at 15h 01m 48s.xml">
       <configuration name="TV_Equipment_RegressionTest.yourServiceCard" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="TV_Equipment_Regression_yourServiceCard - 2018.04.04 at 13h 01m 49s.xml">
-      <configuration name="TV_Equipment_Regression.yourServiceCard" configurationId="TestNG" />
+    <history-entry file="TV_Equipment_RegressionTest_yourServiceCard - 2018.05.30 at 15h 03m 35s.xml">
+      <configuration name="TV_Equipment_RegressionTest.yourServiceCard" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="TV_Equipment_Regression_yourServiceCard - 2018.04.04 at 13h 02m 30s.xml">
-      <configuration name="TV_Equipment_Regression.yourServiceCard" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="TV_Equipment_Regression_yourServiceCard - 2018.04.04 at 13h 04m 14s.xml">
-      <configuration name="TV_Equipment_Regression.yourServiceCard" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="TV_Equipment_Regression_yourServiceCard - 2018.04.04 at 13h 04m 29s.xml">
-      <configuration name="TV_Equipment_Regression.yourServiceCard" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="TV_Equipment_Regression_yourServiceCard - 2018.04.04 at 13h 05m 17s.xml">
-      <configuration name="TV_Equipment_Regression.yourServiceCard" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="TV_Equipment_Regression_yourServiceCard - 2018.04.04 at 13h 28m 07s.xml">
-      <configuration name="TV_Equipment_Regression.yourServiceCard" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="TV_Equipment_Regression_yourServiceCard - 2018.04.04 at 14h 04m 27s.xml">
-      <configuration name="TV_Equipment_Regression.yourServiceCard" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="TV_Equipment_Regression_yourServiceCard - 2018.04.04 at 14h 06m 11s.xml">
-      <configuration name="TV_Equipment_Regression.yourServiceCard" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="TV_Equipment_Regression_yourServiceCard - 2018.04.04 at 14h 07m 06s.xml">
-      <configuration name="TV_Equipment_Regression.yourServiceCard" configurationId="TestNG" />
+    <history-entry file="TV_Equipment_RegressionTest_yourServiceCard - 2018.05.30 at 15h 14m 54s.xml">
+      <configuration name="TV_Equipment_RegressionTest.yourServiceCard" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -607,17 +700,17 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21104537" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21005917" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31459567" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23791622" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24006444" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31854042" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24654832" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -673,66 +766,17 @@
           <option name="timeStamp" value="53" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/PgNavigation.java</url>
-          <line>32</line>
+          <url>file://$PROJECT_DIR$/src/test/java/ReserveCourt.java</url>
+          <line>22</line>
           <properties />
-          <option name="timeStamp" value="54" />
+          <option name="timeStamp" value="58" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="55" />
+      <option name="time" value="59" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/ExtentReports/extentreports-java-3.0.7/lib/testng-6.9.10.jar!/org/testng/TestRunner.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="467" column="23" lean-forward="false" selection-start-line="467" selection-start-column="23" selection-end-line="467" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/ExtentReports/extentreports-java-3.0.7/lib/testng-6.9.10.jar!/org/testng/SuiteRunner.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="219" column="23" lean-forward="false" selection-start-line="219" selection-start-column="23" selection-end-line="219" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/ExtentReports/extentreports-java-3.0.7/lib/testng-6.9.10.jar!/org/testng/TestNG.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="978" column="0" lean-forward="false" selection-start-line="978" selection-start-column="0" selection-end-line="978" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/ExtentReports/extentreports-java-3.0.7/lib/testng-6.9.10.jar!/org/testng/SuiteRunnerWorker.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-api/3.6.0/selenium-api-3.6.0.jar!/org/openqa/selenium/SearchContext.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="10" column="38" lean-forward="true" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-api/3.6.0/selenium-api-3.6.0.jar!/org/openqa/selenium/WebElement.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="9" column="44" lean-forward="true" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/AcDeviceInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="21" column="102" lean-forward="false" selection-start-line="21" selection-start-column="102" selection-end-line="21" selection-end-column="102" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/PgMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -744,13 +788,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-remote-driver/3.6.0/selenium-remote-driver-3.6.0.jar!/org/openqa/selenium/remote/RemoteWebDriver.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="261" column="0" lean-forward="false" selection-start-line="261" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -818,13 +855,6 @@
         <state relative-caret-position="42">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Comparison.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="23" lean-forward="false" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -910,20 +940,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/PgLanding.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/QuickActions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/PgInternet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -931,18 +947,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/extentreport.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/PgAccountSummary.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
           <caret line="23" column="23" lean-forward="false" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -950,7 +958,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="13062">
           <caret line="669" column="0" lean-forward="false" selection-start-line="669" selection-start-column="0" selection-end-line="669" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -978,35 +985,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/AcTV.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="39" column="66" lean-forward="true" selection-start-line="39" selection-start-column="66" selection-end-line="39" selection-end-column="110" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/PreTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
           <caret line="24" column="26" lean-forward="false" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FindElement.java">
+    <entry file="jar://C:/Program Files/ExtentReports/extentreports-java-3.0.7/lib/testng-6.9.10.jar!/org/testng/Assert.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="13" column="29" lean-forward="false" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/PgTV.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="53" column="5" lean-forward="true" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="-122">
+          <caret line="54" column="23" lean-forward="false" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -1018,45 +1007,162 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/PgNavigation.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ExtentManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="31" column="23" lean-forward="false" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
+        <state relative-caret-position="840">
+          <caret line="43" column="47" lean-forward="false" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/ExtentReports/extentreports-java-3.0.7/lib/testng-6.9.10.jar!/org/testng/Assert.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/PgNavigation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-122">
-          <caret line="54" column="23" lean-forward="false" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
+        <state relative-caret-position="693">
+          <caret line="34" column="5" lean-forward="false" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Charter Info/Selenium Java useful code.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="296" column="7" lean-forward="true" selection-start-line="296" selection-start-column="7" selection-end-line="296" selection-end-column="33" />
           <folding>
-            <element signature="e#1349#1350#0" expanded="true" />
-            <element signature="e#1383#1384#0" expanded="true" />
+            <element signature="e#0#12680#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ExtentManager.java">
+    <entry file="file://$USER_HOME$/Desktop/Internet.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="43" column="47" lean-forward="false" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
+        <state relative-caret-position="336">
+          <caret line="16" column="27" lean-forward="false" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extentreport.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Common.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="122" column="22" lean-forward="false" selection-start-line="122" selection-start-column="22" selection-end-line="122" selection-end-column="22" />
+        <state relative-caret-position="273">
+          <caret line="20" column="58" lean-forward="true" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-api/3.6.0/selenium-api-3.6.0.jar!/org/openqa/selenium/By.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/ExtentReports/extentreports-java-3.0.7/lib/testng-6.9.10.jar!/org/testng/internal/TestMethodWorker.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/ExtentReports/extentreports-java-3.0.7/lib/testng-6.9.10.jar!/org/testng/TestRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="586">
+          <caret line="590" column="0" lean-forward="false" selection-start-line="590" selection-start-column="0" selection-end-line="590" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-remote-driver/3.6.0/selenium-remote-driver-3.6.0.jar!/org/openqa/selenium/remote/RemoteWebDriver.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="299" column="0" lean-forward="false" selection-start-line="299" selection-start-column="0" selection-end-line="299" selection-end-column="0" />
+          <folding>
+            <element signature="e#10076#10077#0" expanded="true" />
+            <element signature="e#10140#10141#0" expanded="true" />
+            <element signature="e#11624#11625#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/ExtentReports/extentreports-java-3.0.7/lib/testng-6.9.10.jar!/org/testng/internal/Invoker.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="846" column="0" lean-forward="false" selection-start-line="846" selection-start-column="0" selection-end-line="846" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FindElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ReserveCourt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Comparison.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/PgLanding.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="28" column="116" lean-forward="false" selection-start-line="28" selection-start-column="116" selection-end-line="28" selection-end-column="116" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/QuickActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="61" column="50" lean-forward="true" selection-start-line="61" selection-start-column="50" selection-end-line="61" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/PgTV.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-672">
+          <caret line="31" column="46" lean-forward="false" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/AcTV.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="562">
+          <caret line="53" column="5" lean-forward="false" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/TV_Equipment_RegressionTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="113" column="59" lean-forward="true" selection-start-line="113" selection-start-column="59" selection-end-line="113" selection-end-column="59" />
+        <state relative-caret-position="294">
+          <caret line="60" column="22" lean-forward="false" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
           <folding />
         </state>
       </provider>
